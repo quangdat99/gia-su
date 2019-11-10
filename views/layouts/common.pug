@@ -1,0 +1,269 @@
+html
+	head
+		
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css')
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js')
+		script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js')
+		script(type='text/javascript', src='/js/giasu.js')
+		link(rel='stylesheet', href='/styles/giasu.css')
+	body
+		#top Back to Top
+		.fixed-fb-chat(style='position: fixed;bottom: 2px;right: 5px;z-index: 9999;overflow: hidden;')
+			a#goToMess(href='https://m.me/laptop88.vn', target='_blank')
+				img(src='/image/mes.png', alt='chat với laptop88', width='250px')
+
+		.container
+			.row
+				.col-sm
+					img#img1(src='/image/52Slide-2-.jpg')
+			.btn-group.row(style='width: 100%;margin: auto;')
+				button.btn.btn-light(type='button', class='col-sm-1.5')
+					a(href="/") TRANG CHỦ
+				button.btn.btn-light(type='button', class='col-sm-1.5')
+					a(href="#") PHỤ HUYNH
+				button.btn.btn-light(type='button', class='col-sm-1.5')
+					a(href="#") GIA SƯ
+				button.btn.btn-light(type='button', class='col-sm-1.5')
+					a(href="#") BẢNG GIÁ
+				button.btn.btn-light(type='button', class='col-sm-1.5')
+					a(href="#") CAM KẾT
+				button.btn.btn-light(type='button', class='col-sm-1.5')
+					a(href="/classes") LỚP MỚI
+				button.btn.btn-light(type='button', class='col-sm-1.5')
+					a(href="#") TIN TỨC
+				button.btn.btn-light(type='button', class='col-sm-1.5')
+					a(href="#") LIÊN HỆ
+		.container
+			#content2.row
+				#tvmp.col-sm-3(style='background-color: #FFF')
+					#tuvan(style='background-color:#F60') TƯ VẤN MIỄN PHÍ
+					div
+						small
+							strong Văn phòng
+					div(style='color:red') 19001000
+					div (8h đến 18h)
+					br
+					div
+						small
+							strong Hotline
+					div(style='color:red') 0868389999
+					div(style='color:red') 01647611222
+					br
+					div
+						strong
+							small Phụ huynh
+					button.btn.btn-warning.btn-sm(type='button', style='padding:3px') Đăng ký tìm gia sư
+					br
+					br
+					div
+						strong
+							small Gia sư
+					button.btn.btn-warning.btn-sm(type='button', style='padding:3px') Đăng ký làm gia sư
+				#anhchuyendong.col-sm-9(style='background-color:#FFC')
+					#demo.carousel.slide(data-ride='carousel')
+						// Indicators
+						ul.carousel-indicators
+							li.active(data-target='#demo', data-slide-to='0')
+							li(data-target='#demo', data-slide-to='1')
+							li(data-target='#demo', data-slide-to='2')
+						// The slideshow
+						.carousel-inner
+							.carousel-item.active
+								img(src='/image/gia-su-ong-mat-troi.jpg', alt='Los Angeles', width='100%', height='450')
+							.carousel-item
+								img(src='/image/doi-ngu-gia-su-tay-nghe-cao.jpg', alt='Chicago', width='100%', height='450')
+							.carousel-item
+								img(src='/image/sinh viên gia sư.jpg', alt='New York', width='100%', height='450')
+						// Left and right controls
+						a.carousel-control-prev(href='#demo', data-slide='prev')
+							span.carousel-control-prev-icon
+						a.carousel-control-next(href='#demo', data-slide='next')
+							span.carousel-control-next-icon
+			.row
+				.col-sm
+					marquee(style='color:#E90325') HƠN 10 NĂM KINH NGHIỆM tìm gia sư cho hơn 10000 PHỤ HUYNH
+		.container
+			.row(style='width:100%;margin:auto')
+				.col-sm-9(style='padding: 0px')
+					div(style='margin-right: 10px; background-color: #FFF')
+						.custom(style='border: 1px solid #e0e0e0;background: #fff;margin-bottom: 22px;line-height:1.5; padding-left: 15px; padding-right: 15px;')
+							block content
+				.col-sm-3
+					.row
+						.mainlefcontent
+							p.menucha(style='background-color:#F60') Gia sư tiểu học
+							.ddsmoothmenu-v
+								ul
+									li
+										a(title='Gia sư lớp 1', href='gia-su-lop-1-l1.html')  Gia sư lớp 1
+									li
+										a(title='Gia sư lớp 2', href='gia-su-lop-2-l2.html')  Gia sư lớp 2
+									li
+										a(title='Gia sư lớp 3', href='gia-su-lop-3-l3.html')  Gia sư lớp 3
+									li
+										a(title='Gia sư lớp 4', href='gia-su-lop-4-l4.html')  Gia sư lớp 4
+									li
+										a(title='Gia sư lớp 5', href='gia-su-lop-5-l5.html')  Gia sư lớp 5
+							.clear
+						.mainlefcontent
+							p.menucha(style='background-color:#F60') Gia sư thcs
+							.ddsmoothmenu-v
+								ul
+									li
+										a(title='Gia sư lớp 6', href='gia-su-lop-6-l6.html')  Gia sư lớp 6
+									li
+										a(title='Gia sư lớp 7', href='gia-su-lop-7-l7.html')  Gia sư lớp 7
+									li
+										a(title='Gia sư lớp 8', href='gia-su-lop-8-l8.html')  Gia sư lớp 8
+									li
+										a(title='Gia sư lớp 9', href='gia-su-lop-9-l9.html')  Gia sư lớp 9
+									li
+										a(title='Gia sư luyện thi vào 10', href='gia-su-luyen-thi-vao-10-l15.html')  Gia sư luyện thi vào 10
+						.mainlefcontent
+							p.menucha(style='background-color:#F60') Gia sư thpt
+							.ddsmoothmenu-v
+								ul
+									li
+										a(title='Gia sư lớp 10', href='gia-su-lop-10-l10.html')  Gia sư lớp 10
+									li
+										a(title='Gia sư lớp 11', href='gia-su-lop-11-l13.html')  Gia sư lớp 11
+									li
+										a(title='Gia sư lớp 12', href='gia-su-lop-12-l14.html')  Gia sư lớp 12
+									li
+										a(title='Gia sư luyện thi THPT QG', href='gia-su-luyen-thi-thpt-qg-l16.html')  Gia sư luyện thi THPT QG
+									li
+										a(title='Gia sư luyện thi Đại học - Cao đẳng', href='gia-su-luyen-thi-dai-hoc-cao-dang-l17.html')  Gia sư luyện thi Đại học - Cao đẳng
+							.clear
+						.mainlefcontent
+							p.menucha(style='background-color:#F60') gia sư theo môn
+							.ddsmoothmenu-v
+								ul
+									li
+										a(title='Gia sư môn Toán', href='gia-su-mon-toan-l24.html')  Gia sư môn Toán
+									li
+										a(title='Gia sư môn Lý', href='gia-su-mon-ly-l26.html')  Gia sư môn Lý
+										a(title='Gia sư môn Hóa', href='gia-su-mon-hoa-l27.html')  Gia sư môn Hóa
+									li
+										a(title='Gia sư môn Văn', href='gia-su-mon-van-l28.html')  Gia sư môn Văn
+									li
+										a(title='Gia sư môn Anh', href='gia-su-mon-anh-l30.html')  Gia sư môn Anh
+									li
+										a(title='Gia sư môn Sinh', href='gia-su-mon-sinh-l31.html')  Gia sư môn Sinh
+									li
+										a(title='Gia sư môn Sử', href='gia-su-mon-su-l32.html')  Gia sư môn Sử
+									li
+										a(title='Gia sư môn Địa', href='gia-su-mon-dia-l33.html')  Gia sư môn Địa
+									li
+										a(title='Gia sư môn Vẽ', href='gia-su-mon-ve-l34.html')  Gia sư môn V&#x1EBD;
+									li
+										a(title='Gia sư môn Nhạc', href='gia-su-mon-nhac-l35.html')  Gia sư môn Nhạc
+									li
+										a(title='Gia sư môn Tin', href='gia-su-mon-tin-l36.html')  Gia sư môn Tin
+							.clear
+						.mainlefcontent
+							p.menucha(style='background-color:#F60') Gia sư ngoại ngữ
+							.ddsmoothmenu-v
+								ul
+									li
+										a(title='Gia sư Tiếng Anh', href='gia-su-tieng-anh-l18.html')  Gia sư Tiếng Anh
+									li
+										a(title='Gia sư Tiếng Nhật', href='gia-su-tieng-nhat-l19.html')  Gia sư Tiếng Nhật
+									li
+										a(title='Gia sư Tiếng Hàn', href='gia-su-tieng-han-l20.html')  Gia sư Tiếng Hàn
+									li
+										a(title='Gia sư Tiếng Trung', href='gia-su-tieng-trung-l21.html')  Gia sư Tiếng Trung
+									li
+										a(title='Gia sư Tiếng Pháp', href='gia-su-tieng-phap-l22.html')  Gia sư Tiếng Pháp
+									li
+										a(title='Gia sư Tiếng Nga', href='gia-su-tieng-nga-l23.html')  Gia sư Tiếng Nga
+							.clear
+						.mainlefcontent
+							p.menucha(style='background-color:#F60') GIA SƯ TẠI HÀ NỘI
+							.ddsmoothmenu-v
+								ul
+									li
+										a(title='Gia sư Quận Ba Đình', href='gia-su-quan-ba-dinh-l37.html')  Gia sư Quận Ba Đình
+									li
+										a(title='Gia sư Quận Hoàn Kiếm', href='gia-su-quan-hoan-kiem-l38.html')  Gia sư Quận Hoàn Kiếm
+									li
+										a(title='Gia sư Quận Hai Bà Trưng', href='gia-su-quan-hai-ba-trung-l39.html')  Gia sư Quận Hai Bà Trưng
+									li
+										a(title='Gia sư Quận Cầu Giấy', href='gia-su-quan-cau-giay-l40.html')  Gia sư Quận Cầu Giấy
+									li
+										a(title='Gia sư Quận Đống Đa', href='gia-su-quan-dong-da-l41.html')  Gia sư Quận Đống Đa
+									li
+										a(title='Gia sư Quận Hoàng Mai', href='gia-su-quan-hoang-mai-l42.html')  Gia sư Quận Thanh Trì
+									li
+										a(title='Gia sư Quận Thanh Trì', href='gia-su-quan-thanh-tri-l43.html')  Gia sư Quận Hoàng Mai
+									li
+										a(title='Gia sư Quận Hà Đông', href='gia-su-quan-ha-dong-l44.html')  Gia sư Quận Hà Đông
+									li
+										a(title='Gia sư Quận Thanh Xuân', href='gia-su-quan-thanh-xuan-l45.html') Gia sư Quận Thanh Xuân
+									li
+										a(title='Gia sư Quận Tây Hồ', href='gia-su-quan-tay-ho-l46.html')  Gia sư Quận Tây Hồ
+									li
+										a(title='Gia sư Quận Từ Liêm', href='gia-su-quan-tu-liem-l47.html') Gia sư Quận Từ Liêm
+									li
+										a(title='Gia sư Quận Long Biên', href='gia-su-quan-long-bien-l48.html') Gia sư Quận Long Biên
+									li
+										a(title='Gia sư Huyện Đông Anh', href='gia-su-huyen-dong-anh-l49.html')  Gia sư Huyện Đông Anh
+								.clear
+						.mainlefcontent
+							p.menucha(style='background-color:#F60') Danh Sách Gia Sư
+							.ddsmoothmenu-v
+								ul
+									li
+										a(href='tim-kiem-gia-su?subject=20') Danh sách Gia sư Tiểu học
+									
+									li
+										a(href='tim-kiem-gia-su?subject=2') Danh sách Gia sư môn Toán
+									li
+										a(href='tim-kiem-gia-su?subject=15') Danh sách Gia sư môn Văn
+
+									
+									li
+										a(href='tim-kiem-gia-su?subject=16') Danh sách Gia sư Tiếng Anh
+									
+									li
+										a(href='tim-kiem-gia-su?subject=17') Danh sách Gia sư môn Lý
+									
+									li
+										a(href='tim-kiem-gia-su?subject=18') Danh sách Gia sư môn Hóa
+									li
+										a(href='tim-kiem-gia-su?subject=19') Danh sách Gia sư môn Sinh
+							.clear
+						.mainlefcontent
+							p.menucha(style='background-color:#F60') Học nhóm
+							.ddsmoothmenu-v
+								ul
+									li
+										a(title='Gia sư Huyện Đông Anh', href='hoc-nhom-tai-nha-l50.html') Học Nhóm tại Nhà
+									li
+										a(title='Gia sư Huyện Đông Anh', href='hoc-nhom-tai-trung-tam-l51.html') Học Nhóm tại Trung tâm
+							.clear
+		.container
+			.bot_ad
+				img(src='image/doitac.jpg', alt='', style='width: 100%')
+		.container
+			footer.page-footer.font-small.teal.pt-4
+				.text-center.text-md-left(style='background-color:#FFF')
+					.row
+						.col-md-6.mt-md-0.mt-3(style='padding:30px')
+							h7.text-uppercase.font-weight-bold(style='color: #1e90c9') GIA SƯ QUANG ĐẠT
+							br
+							br
+							.list
+								small
+									p Hotline: 0868389674-0868387777
+									p Mail: dat21051999@gmail.com
+									p Địa chỉ: Tầng 3, Số 20 Lê Thanh Nghị, Hai Bà Trưng, Hà Nội
+						hr.clearfix.w-100.d-md-none.pb-3
+						.col-md-6.mb-md-0.mb-3(style='padding:30px')
+							h7.text-uppercase.font-weight-bold(style='color: #1e90c9') BẢN ĐỒ
+							.box-ft.box-map
+								iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.730274944108!2d105.84797571488299!3d21.003446486012106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac74f21ad2c7%3A0x8e1a68269eb14672!2zMjAgTMOqIFRoYW5oIE5naOG7iywgQ-G6p3UgROG7gW4sIEhhaSBCw6AgVHLGsG5nLCBIw6AgTuG7mWksIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1571669650305!5m2!1sen!2s', width='90%', height='240', frameborder='0', style='border:1px solid ', allowfullscreen='')
+				.footer-copyright.text-center.py-3(style='background-color:#FFF; padding: 1px') Copyright: Giasuquangdat.vn:
+					a(href='https://www.facebook.com/profile.php?id=100012059710190', target='_blank')  Thiết kế Web by Quang Đạt

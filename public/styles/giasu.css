@@ -1,0 +1,90 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	background-color: #82C0FF;
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+button{
+	box-shadow: 2px 2px 3px grey
+}
+
+#img1{
+	width:100%;
+	height:200px;
+	
+}
+
+#menu{
+	width:100%;
+	
+}
+
+#content2{
+	margin:10px 0px 0px 0px;
+	width:100%;
+	background-color:#FFF;
+	text-align:center;
+	
+}
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.mainlefcontent{
+	width:100%;
+	margin:0px;
+}
+.ddsmoothmenu-v{
+	background-color:#FFF;
+}
+.menucha {
+    text-align: center;   
+    color: #FFF;
+    height: 33px;
+    font-weight: bold;
+    padding: 4px;
+    margin-bottom: 0px;
+    
+    text-transform: uppercase;
+    font-size: 16px;
+	
+}	
+#tvmp{
+	padding:0px 0px;
+}
+#anhchuyendong{
+	padding:0px 0px;
+}
+#tuvan{
+	padding:5px 20px;
+}
+#top {
+     
+     width: 48px; height: 48px; 
+     position: fixed; bottom: 100px; right: 50px;
+     text-indent: -99999px; 
+     cursor: pointer; 
+     z-index: 99;
+     background: url(./image/top.png) no-repeat 0 0; 
+}
+.sc-link {
+    float: left;
+    display: block;
+    width: 39px;
+    height: 37px;
+    color: #946cad;
+    background-image: url(social-purple.png);
+    background-position: left top;
+    background-repeat: no-repeat;
+    margin-left: 10px;
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+extends ../layouts/common
+
+
+block content
+	h1 Classes
+
+	a(href="/classes/create") New
+
+	form(action="/classes/search", method="GET")
+		input(typy="text", name="q")
+		button Search
+
+	ul
+		each _class in classes
+			li= _class.subject

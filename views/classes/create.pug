@@ -1,0 +1,11 @@
+extends ../layouts/common
+
+
+block content
+	h1 Create Class
+
+	form(action="/classes/create", method="POST")
+		label Class Name
+		input(type="text", name="subject")
+
+		button Create

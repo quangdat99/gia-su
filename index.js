@@ -17,6 +17,19 @@ app.get('/', function(req, res){
 	res.render('index');
 });
 
+app.get('/dang-ky-tim-gia-su', function(req, res) {
+	res.render('dktgs');
+});
+
+app.get('/dang-ky-lam-gia-su', function(req, res) {
+	res.render('dklgs');
+});
+
+app.get('/lienhe', function(req, res) {
+	res.render('lienhe');
+});
+
+
 app.use('/classes', classRoute);
 
 

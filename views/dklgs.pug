@@ -1,0 +1,60 @@
+extends ./layouts/common
+
+
+block content
+	h1 Đăng ký làm gia sư
+
+	form(action="/classes/create", method="POST")
+		p
+			b Thông tin cá nhân
+		.form-group
+			label(for="email") Tên:(*)
+			input.form-control(type="text", name="ten")
+
+		.form-group
+			label(for="email") Email:(*)
+			input.form-control(type="email", name="email")
+		.form-group
+			label(for="email") Điện thoại:(*)
+			input.form-control(type="number", name="dienthoai")
+
+		.form-group
+			label(for="email") Giới tính:
+			select(name="gioitinh")
+				option Nam
+				option Nữ 
+
+		.form-group
+			label(for="email") Năm sinh:
+			input.form-control(type="text", name="namsinh")
+
+		.form-group
+			label(for="email") Bạn học trường:
+			input.form-control(type="text", name="truong")
+
+		.form-group
+			label(for="email") Chuyên ngành:
+			input.form-control(type="text", name="nganh")
+
+		.form-group
+			label(for="email") Nghề nghiệp hiện tại:
+			input.form-control(type="text", name="nghenghiep")
+
+		.form-group
+			label(for="email") Bạn có thể dạy môn:
+			input.form-control(type="text", name="mon")
+
+		.form-group
+			label(for="email") Bạn có thể dạy lớp mấy:
+			input.form-control(type="text", name="lop")
+
+		.form-group
+			label(for="email") Bạn ở quận nào:
+			input.form-control(type="text", name="lop")
+
+
+		button.btn.btn-primary Đăng ký
+		p
+		p
+			b Chú ý:
+			p Vui lòng điền đầy đủ thông tin vào các mục có dấu (*)

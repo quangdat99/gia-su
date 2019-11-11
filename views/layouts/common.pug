@@ -1,4 +1,4 @@
-html
+html(lang="vi")
 	head
 		
 		meta(charset='utf-8')
@@ -7,11 +7,11 @@ html
 		script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js')
 		script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js')
-		script(type='text/javascript', src='/js/giasu.js')
+		script(type='text/javascript', src='.../public/js/giasu.js')
 		link(rel='stylesheet', href='/styles/giasu.css')
 	body
 		#top Back to Top
-		.fixed-fb-chat(style='position: fixed;bottom: 2px;right: 5px;z-index: 9999;overflow: hidden;')
+		.fixed-fb-chat(style='position: fixed;bottom: 2px;right: 5px;z-index: 9999;overflow: hidden; opacity:0.5;')
 			a#goToMess(href='https://m.me/laptop88.vn', target='_blank')
 				img(src='/image/mes.png', alt='chat với laptop88', width='250px')
 
@@ -35,9 +35,9 @@ html
 				button.btn.btn-light(type='button', class='col-sm-1.5')
 					a(href="#") TIN TỨC
 				button.btn.btn-light(type='button', class='col-sm-1.5')
-					a(href="#") LIÊN HỆ
+					a(href="/lienhe") LIÊN HỆ
 		.container
-			#content2.row
+			#content2.row(style=" box-shadow: 1px 1px 1px 1px #888")
 				#tvmp.col-sm-3(style='background-color: #FFF')
 					#tuvan(style='background-color:#F60') TƯ VẤN MIỄN PHÍ
 					div
@@ -55,13 +55,15 @@ html
 					div
 						strong
 							small Phụ huynh
-					button.btn.btn-warning.btn-sm(type='button', style='padding:3px') Đăng ký tìm gia sư
+					button.btn.btn-warning.btn-sm(type='button', style='padding:3px')
+						a(href="/dang-ky-tim-gia-su") Đăng ký tìm gia sư
 					br
 					br
 					div
 						strong
 							small Gia sư
-					button.btn.btn-warning.btn-sm(type='button', style='padding:3px') Đăng ký làm gia sư
+					button.btn.btn-warning.btn-sm(type='button', style='padding:3px')
+						a(href="/dang-ky-lam-gia-su") Đăng ký làm gia sư
 				#anhchuyendong.col-sm-9(style='background-color:#FFC')
 					#demo.carousel.slide(data-ride='carousel')
 						// Indicators
@@ -87,9 +89,9 @@ html
 					marquee(style='color:#E90325') HƠN 10 NĂM KINH NGHIỆM tìm gia sư cho hơn 10000 PHỤ HUYNH
 		.container
 			.row(style='width:100%;margin:auto')
-				.col-sm-9(style='padding: 0px')
+				.col-sm-9(style='padding: 0px; ')
 					div(style='margin-right: 10px; background-color: #FFF')
-						.custom(style='border: 1px solid #e0e0e0;background: #fff;margin-bottom: 22px;line-height:1.5; padding-left: 15px; padding-right: 15px;')
+						.custom(style='border: 1px solid #e0e0e0;background: #fff;margin-bottom: 22px;line-height:1.5; padding-left: 15px; padding-right: 15px; box-shadow: 1px 1px 1px 1px #888')
 							block content
 				.col-sm-3
 					.row
@@ -245,11 +247,11 @@ html
 										a(title='Gia sư Huyện Đông Anh', href='hoc-nhom-tai-trung-tam-l51.html') Học Nhóm tại Trung tâm
 							.clear
 		.container
-			.bot_ad
+			.bot_ad(style="box-shadow: 1px 1px 1px 1px #888")
 				img(src='image/doitac.jpg', alt='', style='width: 100%')
 		.container
 			footer.page-footer.font-small.teal.pt-4
-				.text-center.text-md-left(style='background-color:#FFF')
+				.text-center.text-md-left(style='background-color:#FFF; box-shadow: 1px 1px 1px 1px #888')
 					.row
 						.col-md-6.mt-md-0.mt-3(style='padding:30px')
 							h7.text-uppercase.font-weight-bold(style='color: #1e90c9') GIA SƯ QUANG ĐẠT

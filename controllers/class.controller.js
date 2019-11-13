@@ -1,4 +1,5 @@
 var db = require('../db');
+var shortid = require('shortid');
 
 module.exports.index = function(req, res){
 	res.render('classes/index', {
@@ -6,16 +7,6 @@ module.exports.index = function(req, res){
 	});
 };
 
-module.exports.search = function(req, res) {
-	var q=req.query.q;
-	var matchedClass = db.get('classes').value().filter( function(_class) {
-		return _class.subject.toLowerCase().indexOf(q.toLowerCase()) !== -1;
-	});
-
-	res.render('classes/index', {
-		classes: matchedClass
-	});
-};
 
 module.exports.create = function(req, res) {
 	res.render('classes/create', {
@@ -24,6 +15,8 @@ module.exports.create = function(req, res) {
 };
 
 module.exports.postCreate = function(req, res) {
+	req.body.id = shortid.generate();
+
 	db.get('classes').push(req.body).write();
 	res.redirect('/classes/create');
 };

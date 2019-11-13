@@ -2,50 +2,35 @@ extends ../layouts/common
 
 
 block content
+		
 	h1 Tạo lớp
+
+	if errors
+		each error in errors
+			.alert.alert-danger= error
 
 	form(action="/classes/create", method="POST")
 		.form-group
 			label(for="email") Mã lớp: 
-			input.form-control(type="number", name="classId")
+			input.form-control(type="number", name="classId", value=values?values.classId: "")
 
 		.form-group
 			label(for="email") Tên lớp:
-			input.form-control(type="text", name="subject")
+			input.form-control(type="text", name="subject", value=values?values.subject: "")
 
 		.form-group
 			label(for="email") Địa chỉ:
-			input.form-control(type="text", name="address")
+			input.form-control(type="text", name="address", value=values?values.address: "")
 
 		.form-group
 			label(for="email") Giá tiền:
-			input.form-control(type="text", name="price")
+			input.form-control(type="text", name="price", value=values?values.price: "")
 
 		.form-group
 			label(for="email") Yêu cầu:
-			input.form-control(type="text", name="require")
+			input.form-control(type="text", name="require", value=values?values.require: "")
 
 		button.btn.btn-primary Tạo lớp 
 
 
-	h1 Danh sách lớp:
-		
-		p
-
-
-		table.table.table-striped
-			thead
-				tr
-					th Mã lớp 
-					th Tên lớp 
-					th Địa chỉ 
-					th Giá tiền 
-					th Yêu cầu 
-			tbody
-				each _class in classes	
-					tr 
-						td= _class.classId
-						td= _class.subject
-						td= _class.address 
-						td= _class.price
-						td= _class.require 
+	

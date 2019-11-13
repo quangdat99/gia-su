@@ -1,0 +1,41 @@
+extends ../layouts/common
+
+
+block content
+	h1 Danh sách gia sư đăng ký
+
+		p
+
+
+		table.table.table-bordered.table-responsive
+			thead
+				tr
+					th Tên
+					th Email 
+					th Điện thoại
+					th Giới tính
+					th Năm sinh
+					th Trường 
+					th Chuyên ngành 
+					th Nghề nghiệp 
+					th Môn dạy 
+					th Lớp dạy
+					th Quận 
+
+
+			tbody
+				each _giasu in giasu 	
+					tr 
+						td= _giasu.ten
+						td= _giasu.email
+						td= _giasu.dienthoai 
+						td= _giasu.gioitinh
+						td= _giasu.namsinh 
+						td= _giasu.truong
+						td= _giasu.nganh 
+						td= _giasu.nghenghiep
+						td= _giasu.mon
+						td= _giasu.lop 
+						td= _giasu.quan
+						
+

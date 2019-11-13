@@ -4,31 +4,36 @@ extends ./layouts/common
 block content
 	h1 Đăng ký tìm gia sư
 
-	form(action="/classes/create", method="POST")
+	if errors
+		each error in errors
+			.alert.alert-danger= error
+
+
+	form(action="/signup/phuhuynh", method="POST")
 		p
 			b Thông tin cá nhân
 		.form-group
-			label(for="email") Tên:
-			input.form-control(type="text", name="ten")
+			label(for="email") Tên:(*)
+			input.form-control(type="text", name="ten", value=values?values.ten: "")
 
 		.form-group
 			label(for="email") Địa chỉ
-			input.form-control(type="text", name="diachi")
+			input.form-control(type="text", name="diachi", value=values?values.diachi: "")
 		.form-group
 			label(for="email") Email:
-			input.form-control(type="email", name="email")
+			input.form-control(type="email", name="email", value=values?values.email: "")
 		.form-group
-			label(for="email") Điện thoại:
-			input.form-control(type="number", name="dienthoai")
+			label(for="email") Điện thoại:(*)
+			input.form-control(type="number", name="dienthoai", value=values?values.dienthoai: "")
 
 		p
 			b Thông tin học sinh
 		.form-group
 			label(for="email") Lớp:
-			input.form-control(type="text", name="lop")
+			input.form-control(type="text", name="lop", value=values?values.lop: "")
 		.form-group
 			label(for="email") Trường:
-			input.form-control(type="text", name="truong")
+			input.form-control(type="text", name="truong", value=values?values.truong: "")
 		.form-group
 			label(for="email") Giới tính:
 			select(name="gioitinh")
@@ -39,17 +44,17 @@ block content
 			b Thông tin yêu cầu
 		.form-group
 			label(for="email") Môn học:
-			input.form-control(type="text", name="monhoc")
+			input.form-control(type="text", name="monhoc", value=values?values.monhoc: "")
 		.form-group
 			label(for="email") Học lực:
-			input.form-control(type="text", name="hocluc")
+			input.form-control(type="text", name="hocluc", value=values?values.hocluc: "")
 		.form-group
 			label(for="email") Số người học:
-			input.form-control(type="numer", name="songuoihoc")
+			input.form-control(type="numer", name="songuoihoc", value=values?values.songuoihoc: "")
 
 		.form-group
 			label(for="email") Yêu cầu khác:
-			textarea.form-control(name="content")
+			textarea.form-control(name="content", value=values?values.content: "")
 
 
 
@@ -58,3 +63,5 @@ block content
 		p
 			b Chú ý:
 			p Vui lòng điền đầy đủ thông tin vào các mục có dấu (*)
+
+	

@@ -2,22 +2,31 @@ extends ../layouts/common
 
 
 block content
-	h1 Classes
+	
+	
+	h1 Danh sách lớp:
+		
+		p
 
-	a(href="/classes/create") New
-
-	form(action="/classes/search", method="GET")
-		input(typy="text", name="q")
-		button Search
 
 		table.table.table-striped
 			thead
 				tr
 					th Mã lớp 
 					th Tên lớp 
+					th Địa chỉ 
+					th Giá tiền 
+					th Yêu cầu 
 			tbody
 				each _class in classes	
 					tr 
-						td= _class.malop
+						td= _class.classId
 						td= _class.subject
-					
+						td= _class.address 
+						td= _class.price
+						td= _class.require 
+
+	a(href="/classes/create")
+		button.btn.btn-primary Tạo lớp					
+
+	p

@@ -18,10 +18,12 @@ module.exports.search = function(req, res) {
 };
 
 module.exports.create = function(req, res) {
-	res.render('classes/create')
+	res.render('classes/create', {
+		classes: db.get('classes').value()
+	});
 };
 
 module.exports.postCreate = function(req, res) {
 	db.get('classes').push(req.body).write();
-	res.redirect('/classes');
+	res.redirect('/classes/create');
 };

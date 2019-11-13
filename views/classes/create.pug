@@ -2,10 +2,50 @@ extends ../layouts/common
 
 
 block content
-	h1 Create Class
+	h1 Tạo lớp
 
 	form(action="/classes/create", method="POST")
-		label Class Name
-		input(type="text", name="subject")
+		.form-group
+			label(for="email") Mã lớp: 
+			input.form-control(type="number", name="classId")
 
-		button Create
+		.form-group
+			label(for="email") Tên lớp:
+			input.form-control(type="text", name="subject")
+
+		.form-group
+			label(for="email") Địa chỉ:
+			input.form-control(type="text", name="address")
+
+		.form-group
+			label(for="email") Giá tiền:
+			input.form-control(type="text", name="price")
+
+		.form-group
+			label(for="email") Yêu cầu:
+			input.form-control(type="text", name="require")
+
+		button.btn.btn-primary Tạo lớp 
+
+
+	h1 Danh sách lớp:
+		
+		p
+
+
+		table.table.table-striped
+			thead
+				tr
+					th Mã lớp 
+					th Tên lớp 
+					th Địa chỉ 
+					th Giá tiền 
+					th Yêu cầu 
+			tbody
+				each _class in classes	
+					tr 
+						td= _class.classId
+						td= _class.subject
+						td= _class.address 
+						td= _class.price
+						td= _class.require 

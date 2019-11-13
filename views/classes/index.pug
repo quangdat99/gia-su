@@ -10,6 +10,14 @@ block content
 		input(typy="text", name="q")
 		button Search
 
-	ul
-		each _class in classes
-			li= _class.subject
+		table.table.table-striped
+			thead
+				tr
+					th Mã lớp 
+					th Tên lớp 
+			tbody
+				each _class in classes	
+					tr 
+						td= _class.malop
+						td= _class.subject
+					

@@ -2,7 +2,33 @@ extends ../layouts/common
 
 
 block content
+
+	h1 Danh sách lớp:
 		
+		p
+
+
+		table.table.table-bordered.table-responsive
+			thead
+				tr
+					th Mã lớp 
+					th Tên lớp 
+					th Địa chỉ 
+					th Giá tiền 
+					th Yêu cầu 
+					th Xóa 
+			tbody
+				each _class in classes	
+					tr 
+						td= _class.classId
+						td= _class.subject
+						td= _class.address 
+						td= _class.price
+						td= _class.require 
+						td 
+							button(data-id=''+_class.id) delete 
+
+	
 	h1 Tạo lớp
 
 	if errors
@@ -31,6 +57,7 @@ block content
 			input.form-control(type="text", name="require", value=values?values.require: "")
 
 		button.btn.btn-primary Tạo lớp 
+
 
 
 	

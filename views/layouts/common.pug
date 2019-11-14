@@ -19,23 +19,25 @@ html(lang="vi")
 			.row
 				.col-sm
 					img#img1(src='/image/52Slide-2-.jpg')
-			.btn-group.row(style='width: 100%;margin: auto;')
-				button.btn.btn-light(type='button', class='col-sm-1.5')
-					a(href="/") TRANG CHỦ
-				button.btn.btn-light(type='button', class='col-sm-1.5')
-					a(href="#") PHỤ HUYNH
-				button.btn.btn-light(type='button', class='col-sm-1.5')
-					a(href="#") GIA SƯ
-				button.btn.btn-light(type='button', class='col-sm-1.5')
-					a(href="#") BẢNG GIÁ
-				button.btn.btn-light(type='button', class='col-sm-1.5')
-					a(href="#") CAM KẾT
-				button.btn.btn-light(type='button', class='col-sm-1.5')
-					a(href="/classes") LỚP MỚI
-				button.btn.btn-light(type='button', class='col-sm-1.5')
-					a(href="#") TIN TỨC
-				button.btn.btn-light(type='button', class='col-sm-1.5')
-					a(href="/lienhe") LIÊN HỆ
+			
+			ul.nav.nav-pills.nav-justified(style="background-color: #FFF")
+				li.nav-item
+					a.nav-link(href='/') TRANG CHỦ
+				li.nav-item
+					a.nav-link(href='#') PHỤ HUYNH
+				li.nav-item
+					a.nav-link(href='#') GIA SƯ
+				li.nav-item
+					a.nav-link(href='#') BẢNG GIÁ
+				li.nav-item
+					a.nav-link(href='#') CAM KẾT
+				li.nav-item
+					a.nav-link(href='/classes') LỚP MỚI
+				li.nav-item
+					a.nav-link(href='#') TIN TỨC
+				li.nav-item
+					a.nav-link(href='/lienhe') LIÊN HỆ
+
 		.container
 			#content2.row(style=" box-shadow: 1px 1px 1px 1px #888")
 				#tvmp.col-sm-3(style='background-color: #FFF')
@@ -55,15 +57,17 @@ html(lang="vi")
 					div
 						strong
 							small Phụ huynh
-					button.btn.btn-warning.btn-sm(type='button', style='padding:3px')
-						a(href="/dang-ky-tim-gia-su") Đăng ký tìm gia sư
+					
+					a(href="/dang-ky-tim-gia-su")
+						button.btn.btn-warning.btn-sm(type='button', style='padding:3px') Đăng ký tìm gia sư
 					br
 					br
 					div
 						strong
 							small Gia sư
-					button.btn.btn-warning.btn-sm(type='button', style='padding:3px')
-						a(href="/dang-ky-lam-gia-su") Đăng ký làm gia sư
+					
+					a(href="/dang-ky-lam-gia-su")
+						button.btn.btn-warning.btn-sm(type='button', style='padding:3px') Đăng ký làm gia sư
 				#anhchuyendong.col-sm-9(style='background-color:#FFC')
 					#demo.carousel.slide(data-ride='carousel')
 						// Indicators

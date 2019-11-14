@@ -12,6 +12,7 @@ module.exports.create = function(req, res) {
 	res.render('classes/create', {
 		classes: db.get('classes').value()
 	});
+
 };
 
 module.exports.postCreate = function(req, res) {

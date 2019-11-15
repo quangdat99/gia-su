@@ -1,3 +1,5 @@
+var db = require('../db');
+
 module.exports.postPhuhuynh = function (req, res, next) {
 	var errors = [];
 
@@ -72,7 +74,8 @@ module.exports.postCreate = function (req, res, next) {
 	if (errors.length) {
 		res.render('classes/create', {
 			errors: errors,
-			values: req.body
+			values: req.body,
+			classes: db.get('classes').value()
 		});
 		return;
 	}

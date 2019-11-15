@@ -10,12 +10,12 @@ module.exports.postLogin = function(req, res) {
 	 var email = req.body.email;
 	 var password = req.body.password;
 
-	 var addmin = db.get('addmin').find({email: email}).value();
+	 var admin = db.get('admin').find({email: email}).value();
 
-	 if (!addmin) {
+	 if (!admin) {
 	 	res.render('auth/login', {
 	 		errors: [
-	 			'addmin does not exist.'
+	 			'admin does not exist.'
 	 		],
 	 		values: req.body
 	 	});
@@ -24,7 +24,7 @@ module.exports.postLogin = function(req, res) {
 
 	 //var hashedPassword = md5(password);
 
-	 if (addmin.password !== password) {
+	 if (admin.password !== password) {
 	 	res.render('auth/login', {
 	 		errors: [
 	 			'Wrong password.'
@@ -34,6 +34,6 @@ module.exports.postLogin = function(req, res) {
 	 	return;
 	 }
 
-	 res.cookie('addminId', addmin.id);
-	 res.redirect('/addmin');
+	 res.cookie('adminId', admin.id);
+	 res.redirect('/admin');
 }

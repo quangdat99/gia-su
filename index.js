@@ -34,8 +34,8 @@ app.get('/dang-ky-lam-gia-su', function(req, res) {
 app.get('/lienhe', function(req, res) {
 	res.render('lienhe');
 });
-app.get('/addmin',authMiddleware.requireAuth, function(req, res) {
-	res.render('addmin');
+app.get('/admin',authMiddleware.requireAuth, function(req, res) {
+	res.render('admin');
 });
 
 

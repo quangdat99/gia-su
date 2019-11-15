@@ -1,16 +1,16 @@
 var db = require('../db');
 
 module.exports.requireAuth = function (req, res, next) {
-	if (!req.cookies.addminId) {
+	if (!req.cookies.adminId) {
 		res.redirect('/auth/login');
 		return;
 	}
 
-	var addmin = db.get('addmin')
-				 .find({id: req.cookies.addminId })
+	var admin = db.get('admin')
+				 .find({id: req.cookies.adminId })
 				 .value();
 
-	if (!addmin) {
+	if (!admin) {
 		res.redirect('/auth/login');
 		return;
 	}

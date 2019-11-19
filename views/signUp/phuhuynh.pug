@@ -2,7 +2,7 @@ extends ../layouts/common
 
 
 block content
-	h1 Danh sách gia sư đăng ký
+	h1 Danh sách phụ huynh đăng ký
 
 		p
 
@@ -32,6 +32,7 @@ block content
 							th Học lực 
 							th Số người học 
 							th Yêu cầu khác 
+					
 
 			tbody
 				each _phuhuynh in phuhuynh	
@@ -47,3 +48,5 @@ block content
 						td= _phuhuynh.hocluc
 						td= _phuhuynh.songuoihoc
 						td= _phuhuynh.content
+						td 
+							button(data-id='') delete 

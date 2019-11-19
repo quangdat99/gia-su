@@ -1,4 +1,6 @@
-var db = require('../db');
+var Phuhuynh = require('../models/phuhuynh.model');
+var Giasu = require('../models/giasu.model');
+var Classes = require('../models/class.model');
 
 module.exports.postPhuhuynh = function (req, res, next) {
 	var errors = [];
@@ -48,7 +50,7 @@ module.exports.postGiasu = function (req, res, next) {
 	next();
 };
 
-module.exports.postCreate = function (req, res, next) {
+module.exports.postCreate = async function (req, res, next) {
 	var errors = [];
 
 	if (!req.body.classId) {
@@ -72,10 +74,11 @@ module.exports.postCreate = function (req, res, next) {
 	}
 
 	if (errors.length) {
+		var classes = await Classes.find();
 		res.render('classes/create', {
 			errors: errors,
 			values: req.body,
-			classes: db.get('classes').value()
+			classes: classes
 		});
 		return;
 	}

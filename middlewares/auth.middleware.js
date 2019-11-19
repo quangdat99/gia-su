@@ -1,16 +1,14 @@
-var db = require('../db');
+var Admin = require('../models/admin.model');
 
-module.exports.requireAuth = function (req, res, next) {
+module.exports.requireAuth = async function (req, res, next) {
 	if (!req.cookies.adminId) {
 		res.redirect('/auth/login');
 		return;
 	}
 
-	var admin = db.get('admin')
-				 .find({id: req.cookies.adminId })
-				 .value();
-
-	if (!admin) {
+	var admin = await Admin.find({_id: req.cookies.adminId });
+	//console.log(admin[0]._id == req.cookies.adminId);
+	if (!admin[0]._id) {
 		res.redirect('/auth/login');
 		return;
 	}

@@ -1,24 +1,25 @@
-var db = require('../db');
+var Giasu = require('../models/giasu.model');
+var Phuhuynh = require('../models/phuhuynh.model');
 
-module.exports.giasu = function(req, res) {
+module.exports.giasu = async function(req, res) {
+	var giasu = await Giasu.find();
 	res.render('signUp/giasu', {
-		giasu: db.get('giasu').value()
+		giasu: giasu
 	});
 };
-module.exports.phuhuynh = function(req, res) {
+module.exports.phuhuynh = async function(req, res) {
+	var phuhuynh = await Phuhuynh.find();
 	res.render('signUp/phuhuynh', {
-		phuhuynh: db.get('phuhuynh').value()
+		phuhuynh: phuhuynh
 	});
 };
 
 module.exports.postPhuhuynh = function(req, res) {
-	db.get('phuhuynh').push(req.body).write();
-	//res.window.alert("Đăng ký thành công");
-	res.redirect('/signup/phuhuynh');
+	Phuhuynh.create(req.body);
+	res.redirect('/classes');
 };
 
 module.exports.postGiasu = function(req, res) {
-	db.get('giasu').push(req.body).write();
-	//res.window.alert("Đăng ký thành công");
-	res.redirect('/signup/giasu');
+	Giasu.create(req.body);	
+	res.redirect('/classes');
 };

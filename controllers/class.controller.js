@@ -1,23 +1,25 @@
-var db = require('../db');
-var shortid = require('shortid');
+var Classes = require('../models/class.model')
 
-module.exports.index = function(req, res){
+
+module.exports.index = async function(req, res){
+
+	var classes = await Classes.find();
 	res.render('classes/index', {
-		classes: db.get('classes').value()
+		classes: classes
 	});
 };
 
 
-module.exports.create = function(req, res) {
+module.exports.create = async function(req, res) {
+
+	var classes = await Classes.find();
 	res.render('classes/create', {
-		classes: db.get('classes').value()
+		classes: classes
 	});
 
 };
 
 module.exports.postCreate = function(req, res) {
-	req.body.id = shortid.generate();
-
-	db.get('classes').push(req.body).write();
+	Classes.create(req.body);
 	res.redirect('/classes/create');
 };

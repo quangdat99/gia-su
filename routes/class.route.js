@@ -3,7 +3,7 @@ var controller = require('../controllers/class.controller');
 var authMiddleware = require('../middlewares/auth.middleware');
 var validate = require('../validate/signUp.validate');
 
-var db= require('../db');
+
 
 var router = express.Router();
 

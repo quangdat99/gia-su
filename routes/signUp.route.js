@@ -1,7 +1,7 @@
 var express = require('express');
 var controller = require('../controllers/signUp.controller');
 var validate = require('../validate/signUp.validate');
-var db= require('../db');
+
 
 var router = express.Router();
 

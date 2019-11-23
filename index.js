@@ -11,6 +11,7 @@ var classRoute = require("./routes/class.route");
 var signUpRoute = require("./routes/signUp.route");
 var authRoute = require('./routes/auth.route');
 var authMiddleware = require('./middlewares/auth.middleware');
+var Classes = require('./models/class.model')
 
 
 var port = 3000;
@@ -33,6 +34,13 @@ app.get('/dang-ky-thue-gia-su', function(req, res) {
 });
 app.get('/dang-ky-lam-gia-su', function(req, res) {
 	res.render('dang-ky-lam-gia-su');
+});
+app.get('/danh-sach-lop-moi', async function(req, res){
+
+	var classes = await Classes.find();
+	res.render('danh-sach-lop-moi', {
+		classes: classes
+	});
 });
 app.get('/cach-thuc-nhan-lop', function(req, res) {
 	res.render('cach-thuc-nhan-lop');

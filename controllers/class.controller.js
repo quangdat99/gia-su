@@ -1,13 +1,13 @@
 var Classes = require('../models/class.model')
 
 
-module.exports.index = async function(req, res){
+// module.exports.index = async function(req, res){
 
-	var classes = await Classes.find();
-	res.render('classes/index', {
-		classes: classes
-	});
-};
+// 	var classes = await Classes.find();
+// 	res.render('classes/index', {
+// 		classes: classes
+// 	});
+// };
 
 
 module.exports.create = async function(req, res) {

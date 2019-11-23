@@ -7,7 +7,7 @@ var validate = require('../validate/signUp.validate');
 
 var router = express.Router();
 
-router.get('/', controller.index);
+// router.get('/', controller.index);
 
 router.get('/create',authMiddleware.requireAuth, controller.create);
 

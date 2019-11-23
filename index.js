@@ -28,14 +28,23 @@ app.use(express.static('public'));
 app.get('/', function(req, res){
 	res.render('index');
 });
-app.get('/dang-ky-tim-gia-su', function(req, res) {
-	res.render('dktgs');
+app.get('/dang-ky-thue-gia-su', function(req, res) {
+	res.render('dang-ky-thue-gia-su');
 });
 app.get('/dang-ky-lam-gia-su', function(req, res) {
-	res.render('dklgs');
+	res.render('dang-ky-lam-gia-su');
 });
-app.get('/lienhe', function(req, res) {
-	res.render('lienhe');
+app.get('/cach-thuc-nhan-lop', function(req, res) {
+	res.render('cach-thuc-nhan-lop');
+});
+app.get('/chinh-sach-hoan-phi', function(req, res) {
+	res.render('chinh-sach-hoan-phi');
+});
+app.get('/chinh-sach-hoc-thu', function(req, res) {
+	res.render('chinh-sach-hoc-thu');
+});
+app.get('/lien-he', function(req, res) {
+	res.render('lien-he');
 });
 app.get('/admin',authMiddleware.requireAuth, function(req, res) {
 	res.render('admin');

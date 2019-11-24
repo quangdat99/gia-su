@@ -1,17 +1,10 @@
 var mongoose = require('mongoose');
 
 var phuhuynhSchema = new mongoose.Schema({
-	ten: String,
-	diachi: String,
-	email: String,
+	name: String,
 	dienthoai: Number,
-	lop: String,
-	truong: String,
-	gioitinh: String,
-	monhoc: String,
-	hocluc: String,
-	songuoihoc: String,
-	content: String
+	address: String,
+	message: String,
 });
 
 var Phuhuynh = mongoose.model('Phuhuynh', phuhuynhSchema, 'phuhuynh');

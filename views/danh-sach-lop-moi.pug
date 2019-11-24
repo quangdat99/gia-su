@@ -2,10 +2,14 @@ extends ./layouts/common
 
 
 block content
-	
-	
-	h1 Danh sách lớp:
+	h1 Danh Sách Lớp Mới 
+
+	.mt-4.mb-4
+		form(method='GET', action='/search')
+				input.search-input(type='text', name='keyword', placeholder='Tìm kiếm lớp gia sư phù hợp ...')
+				button.search-btn(type='submit') Tìm kiếm 
 		
+
 		p
 
 

@@ -2,66 +2,39 @@ extends ./layouts/common
 
 
 block content
-	h1 Đăng ký thuê gia sư
 
-	if errors
-		each error in errors
-			.alert.alert-danger= error
+  .col-lg-12
+    h1.mb-4 Đăng ký thuê gia sư
+    hr
+    br
+
+    if errors
+      each error in errors
+        .alert.alert-danger= error
+
+    form#form_order(action='/signup/phuhuynh', method='POST')  
+      .form-row
+        .col-lg-6.form-group
+          input#name.form-control(type='text', name='name', placeholder='Họ và tên', value=values?values.ten: "")
+        .col-lg-6.form-group
+          input#phone.form-control(type='number', name='phone', placeholder='Số điện thoại', value=values?values.ten: "")
 
 
-	form(action="/signup/phuhuynh", method="POST")
-		p
-			b Thông tin cá nhân
-		.form-group
-			label(for="email") Tên:(*)
-			input.form-control(type="text", name="ten", value=values?values.ten: "")
+      .form-row
+        .col-lg-12.form-group.mt-lg-2
+          input.form-control(type='text', name='address', placeholder='Số nhà, tên đường', value=values?values.ten: "")
 
-		.form-group
-			label(for="email") Địa chỉ
-			input.form-control(type="text", name="diachi", value=values?values.diachi: "")
-		.form-group
-			label(for="email") Email:
-			input.form-control(type="email", name="email", value=values?values.email: "")
-		.form-group
-			label(for="email") Điện thoại:(*)
-			input.form-control(type="number", name="dienthoai", value=values?values.dienthoai: "")
+        .col-lg-12.form-group.mt-lg-2
+          input.form-control(type='text', name='message', placeholder='Ghi chú (không bắt buộc)', value=values?values.ten: "")
 
-		p
-			b Thông tin học sinh
-		.form-group
-			label(for="email") Lớp:
-			input.form-control(type="text", name="lop", value=values?values.lop: "")
-		.form-group
-			label(for="email") Trường:
-			input.form-control(type="text", name="truong", value=values?values.truong: "")
-		.form-group
-			label(for="email") Giới tính:
-			select(name="gioitinh")
-				option Nam
-				option Nữ 
-
-		p
-			b Thông tin yêu cầu
-		.form-group
-			label(for="email") Môn học:
-			input.form-control(type="text", name="monhoc", value=values?values.monhoc: "")
-		.form-group
-			label(for="email") Học lực:
-			input.form-control(type="text", name="hocluc", value=values?values.hocluc: "")
-		.form-group
-			label(for="email") Số người học:
-			input.form-control(type="numer", name="songuoihoc", value=values?values.songuoihoc: "")
-
-		.form-group
-			label(for="email") Yêu cầu khác:
-			textarea.form-control(name="content", value=values?values.content: "")
+      .text-right
+        input.btn.btn-primary.mt-3.font-weight-bold(type='submit', value='Đăng Ký Ngay')
 
 
 
-		button.btn.btn-primary Gửi 
-		p
-		p
-			b Chú ý:
-			p Vui lòng điền đầy đủ thông tin vào các mục có dấu (*)
 
-	
+    .mt-4.pt-2.text-muted.text-justify
+      hr
+      p.mb-0
+        | Sau khi bạn đăng ký, chúng tôi sẽ gọi lại cho bạn để trao đổi thêm những thông tin cần thiết khác. Tất cả thông tin của bạn sẽ được bảo mật.
+

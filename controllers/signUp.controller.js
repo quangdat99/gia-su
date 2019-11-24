@@ -16,10 +16,10 @@ module.exports.phuhuynh = async function(req, res) {
 
 module.exports.postPhuhuynh = function(req, res) {
 	Phuhuynh.create(req.body);
-	res.redirect('/classes');
+	res.redirect('/danh-sach-lop-moi');
 };
 
 module.exports.postGiasu = function(req, res) {
 	Giasu.create(req.body);	
-	res.redirect('/classes');
+	res.redirect('/danh-sach-lop-moi');
 };

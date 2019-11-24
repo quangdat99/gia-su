@@ -4,49 +4,23 @@ extends ../layouts/common
 block content
 	h1 Danh sách phụ huynh đăng ký
 
-		p
+	div(style='overflow-x:auto;')
 
 
-		table.table.table-bordered.table-responsive
+		table.table.table-bordered
 			thead
 				tr
-					th(colspan="4") Thông tin cá nhân 
-						
-
-					th(colspan="3") Thông tin học sinh 
-						
-					th(colspan="4") Thông tin yêu cầu 
-						tr 
-							th Tên 
-							th Địa chỉ 
-							th Email 
-							th Điện thoại 
-
-							th Lớp 
-							th Trường 
-							th Giới tính 
-
-
-						
-							th Môn học 
-							th Học lực 
-							th Số người học 
-							th Yêu cầu khác 
-					
-
+					th Họ tên 	
+					th Điện Thoại  
+					th Địa chỉ 
+					th Ghi chú 
+					th Xóa 
 			tbody
 				each _phuhuynh in phuhuynh	
 					tr 
-						td= _phuhuynh.ten
-						td= _phuhuynh.diachi
-						td= _phuhuynh.email 
-						td= _phuhuynh.dienthoai
-						td= _phuhuynh.lop 
-						td= _phuhuynh.truong
-						td= _phuhuynh.gioitinh
-						td= _phuhuynh.monhoc
-						td= _phuhuynh.hocluc
-						td= _phuhuynh.songuoihoc
-						td= _phuhuynh.content
+						td= _phuhuynh.name
+						td= _phuhuynh.phone
+						td= _phuhuynh.address 
+						td= _phuhuynh.message 
 						td 
 							button(data-id='') delete 

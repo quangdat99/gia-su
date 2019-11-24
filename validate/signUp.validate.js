@@ -5,16 +5,16 @@ var Classes = require('../models/class.model');
 module.exports.postPhuhuynh = function (req, res, next) {
 	var errors = [];
 
-	if (!req.body.ten) {
+	if (!req.body.name) {
 		errors.push('Yêu cầu nhập Tên ');
 	}
 
-	if (!req.body.dienthoai) {
+	if (!req.body.phone) {
 		errors.push('Yêu cầu nhập số Điên thoại ');
 	}
 
 	if (errors.length) {
-		res.render('dktgs', {
+		res.render('dang-ky-thue-gia-su', {
 			errors: errors,
 			values: req.body
 		});
@@ -27,7 +27,7 @@ module.exports.postPhuhuynh = function (req, res, next) {
 module.exports.postGiasu = function (req, res, next) {
 	var errors = [];
 
-	if (!req.body.ten) {
+	if (!req.body.name) {
 		errors.push('Yêu cầu nhập Tên ');
 	}
 
@@ -35,12 +35,12 @@ module.exports.postGiasu = function (req, res, next) {
 		errors.push('Yêu cầu nhập Email ');
 	}
 
-	if (!req.body.dienthoai) {
+	if (!req.body.phone) {
 		errors.push('Yêu cầu nhập số Điên thoại ');
 	}
 
 	if (errors.length) {
-		res.render('dklgs', {
+		res.render('dang-ky-lam-gia-su', {
 			errors: errors,
 			values: req.body
 		});

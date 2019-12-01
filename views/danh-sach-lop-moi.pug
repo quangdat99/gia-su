@@ -13,19 +13,45 @@ block content
 		p
 
 
-		table.table.table-striped
-			thead
-				tr
-					th Mã lớp 
-					th Tên lớp 
-					th Địa chỉ 
-					th Giá tiền 
-					th Yêu cầu 
-			tbody
-				each _class in classes	
-					tr 
-						td= _class.classId
-						td= _class.subject
-						td= _class.address 
-						td= _class.price
-						td= _class.require 
+		.row 		
+			each _class in classes 
+				.col-lg-3.col-md-4.col-sm-6
+					.myclass-item.text-small
+						.myclass-item-head
+							a#malop(href='/classes/' + _class.classId)
+								span.font-weight-bold Mã lớp: 
+									span= _class.classId 
+						.myclass-item-body
+							p.p-icon.mb-2 
+								i.fa.fa-address-book
+								span= _class.subject 
+							p.p-icon.mb-2
+								i.fas.fa-map-marker-alt
+								span= _class.address
+							p.p-icon.mb-2
+								i.fa.fa-dollar
+								span= _class.price
+							p.p-icon.mb-2 
+								i.far.fa-flag
+								span Yêu cầu:	
+								span=	_class.require 
+							.text-right.mt-3
+								a.btn.btn-success.btn-sm.font-weight-bold(href='/classes/' + _class.classId) &raquo; Xem chi tiết 
+
+
+		//- table.table.table-striped
+		//- 	thead
+		//- 		tr
+		//- 			th Mã lớp 
+		//- 			th Tên lớp 
+		//- 			th Địa chỉ 
+		//- 			th Giá tiền 
+		//- 			th Yêu cầu 
+		//- 	tbody
+		//- 		each _class in classes	
+		//- 			tr 
+		//- 				td= _class.classId
+		//- 				td= _class.subject
+		//- 				td= _class.address 
+		//- 				td= _class.price
+		//- 				td= _class.require 

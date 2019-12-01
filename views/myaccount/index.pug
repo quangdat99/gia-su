@@ -1,0 +1,95 @@
+extends ../layouts/common
+
+
+block content
+
+  .row
+    .col-lg-4.pr-lg-5
+      h3 Tài khoản của tôi
+      h5.mt-3.pl-1
+        | Mã gia sư :  
+        span.text-success GA8339
+    .col-lg-8.mt-5.mt-lg-4
+
+      
+      h5.mb-4 Thông tin cơ bản
+      form(method='POST', action='/myaccount/profile/basic', novalidate='')
+        input(type='hidden', name='_token', value='pQGrRZi4ws9DlVpL172XvgVu2rMagFkrQ13BTwBP')
+        .row
+          .col-md-4.form-group
+            label.font-weight-bold Họ và tên: 
+            input.form-control(type='text', name='name', value='', autocomplete='off', maxlength='50')
+          .col-md-3.form-group.mt-1.mt-md-0
+            label.font-weight-bold Điện thoại:
+            .form-control-wrap
+              input.form-control(type='tel', name='phone', value='', autocomplete='off', maxlength='15')
+            
+          .col-md-5.form-group.mt-1.mt-md-0
+            label.font-weight-bold Email:
+            .form-control-verified
+              input.form-control(type='email', name='email', value='', autocomplete='off', readonly='', maxlength='100')
+          .col-md-3.form-group
+            label.font-weight-bold Giới tính 
+            select#gender_id.form-control.nice
+              option(selected='', value='') Lựa chọn 
+              option(value='1') Nam
+              option(value='2') Nữ 
+              
+          .col-md-3.form-group.mt-1.mt-md-0
+            label.font-weight-bold Năm sinh:
+            select.form-control.nice
+              option(value='', selected='') Chọn năm 
+              option(value='2002') N&abreve;m 2002
+              option(value='2001') N&abreve;m 2001
+              option(value='2000') N&abreve;m 2000
+              option(value='1999') N&abreve;m 1999
+              option(value='1998') N&abreve;m 1998
+              option(value='1997') N&abreve;m 1997
+              option(value='1996') N&abreve;m 1996
+              option(value='1995') N&abreve;m 1995
+              option(value='1994') N&abreve;m 1994
+              option(value='1993') N&abreve;m 1993
+              option(value='1992') N&abreve;m 1992
+              option(value='1991') N&abreve;m 1991
+              option(value='1990') N&abreve;m 1990
+              option(value='1989') N&abreve;m 1989
+              option(value='1988') N&abreve;m 1988
+              option(value='1987') N&abreve;m 1987
+              option(value='1986') N&abreve;m 1986
+              option(value='1985') N&abreve;m 1985
+              option(value='1984') N&abreve;m 1984
+              option(value='1983') N&abreve;m 1983
+              option(value='1982') N&abreve;m 1982
+              option(value='1981') N&abreve;m 1981
+              option(value='1980') N&abreve;m 1980
+              option(value='1979') N&abreve;m 1979
+              option(value='1978') N&abreve;m 1978
+              option(value='1977') N&abreve;m 1977
+              option(value='1976') N&abreve;m 1976
+              option(value='1975') N&abreve;m 1975
+              option(value='1974') N&abreve;m 1974
+              option(value='1973') N&abreve;m 1973
+              option(value='1972') N&abreve;m 1972
+              option(value='1971') N&abreve;m 1971
+              option(value='1970') N&abreve;m 1970
+
+        h5.mt-4 Học vấn (Đại học, cao đẳng):
+        .row.mt-4
+          .col-md-6.form-group
+            label.font-weight-bold T&ecirc;n tr&#x1B0;&#x1EDD;ng h&#x1ECD;c:
+            input.form-control(type='text', name='college_name', value='Bách Khoa', autocomplete='off', maxlength='250')
+          .col-md-6.form-group.mt-2.mt-md-0
+            label.font-weight-bold Ng&agrave;nh h&#x1ECD;c:
+            input.form-control(type='text', name='college_major', value='Cntt', autocomplete='off', maxlength='250') 
+
+        .text-right
+          input.btn.btn-primary.mt-3.font-weight-bold(type='submit', value='Cập nhật ngay ')
+
+      h4.ux_card-title Lớp đã nhận 
+        .mt-3
+          a.btn.btn-outline-dark(href='/danh-sach-lop-moi') Xem danh sách lớp mới 
+
+
+
+      
+        

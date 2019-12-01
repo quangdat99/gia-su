@@ -1,0 +1,22 @@
+extends ./layouts/common
+
+
+block content
+  .justify-content-center
+    .small-block
+      .pb-3
+        h4.text-success.mb-4 Đăng nhập vào tài khoản
+        form.check_validation(method='POST', action='/login', novalidate='')
+          .form-group
+            .input-group
+              input#email.form-control(type='email', name='email', value='', required='', placeholder='Nhập email')
+          .form-group
+            .input-group
+              input#password.form-control(type='password', name='password', required='', placeholder='Nhập mật khẩu')
+          .form-group.mb-0
+            button.mt-2.btn.btn-success.font-weight-bold(type='submit') Đăng nhập 
+            a.mt-3.float-right(href='/password/reset') Quên mật khẩu ?
+
+        p.my-lead.mt-5.mb-0.text-center
+          span Bạn là thành viên mới?
+          a.d-inline-block.text-underline.ml-2(href='/register') Tạo tài khoản

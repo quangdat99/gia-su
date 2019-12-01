@@ -9,6 +9,13 @@ var Classes = require('../models/class.model')
 // 	});
 // };
 
+module.exports.view = async function(req, res) {
+	var id = req.params.id;
+	var classes = await Classes.findOne({classId: id});
+	res.render('classes/view', {
+		classes: classes
+	});
+}
 
 module.exports.create = async function(req, res) {
 

@@ -10,13 +10,13 @@ body{
 	box-shadow: 1px 2px 3px grey
 }*/
 
-h5,h1,h4{
+h5,h1,h4,h3,h2{
     color: #205493;
 }
 
 
 a{
-    color: #205493;
+    color: #222;
 }
 
 a:hover{
@@ -78,8 +78,10 @@ a:hover{
 #content2{
 	margin:10px 0px 0px 0px;
 	width:100%;
+    
 	background-color:#FFF;
 	text-align:center;
+
 	
 }
 .row {
@@ -137,9 +139,42 @@ a:hover{
 }
 
 
+.myclass-item {
+    position: relative;
+    margin-bottom: 2rem;
+    border-radius: 3px;
+    font-size: .95rem;
+}
 
+.myclass-item-head {
+    padding: .5rem 1rem;
+    background: #0071bc;
+    border: 1px solid #0071bc;
+    color: #fff;
+}
 
+.myclass-item-body {
+    height: 240px;
+    position: relative;
+}
 
+.myclass-item-body {
+    padding: 1rem;
+    border: 1px solid #d3d3d3;
+    background: #fff;
+}
 
+.myclass-item-body .btn {
+    position: absolute;
+    right: 1rem;
+    bottom: 1.2rem;
+}
 
+#malop{
+    color: #fff;
+}
+
+i{
+    margin-right: 7px;
+}
 

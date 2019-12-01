@@ -10,6 +10,7 @@ mongoose.connect(process.env.MONGO_URL);
 var classRoute = require("./routes/class.route");
 var signUpRoute = require("./routes/signUp.route");
 var authRoute = require('./routes/auth.route');
+var myAccountRoute = require('./routes/myAccount.route');
 var authMiddleware = require('./middlewares/auth.middleware');
 var Classes = require('./models/class.model')
 
@@ -57,10 +58,15 @@ app.get('/lien-he', function(req, res) {
 app.get('/admin',authMiddleware.requireAuth, function(req, res) {
 	res.render('admin');
 });
-
-
+app.get('/login', function(req, res) {
+	res.render('login');
+});
+app.get('/register', function(req, res) {
+	res.render('register');
+});
 
 app.use('/classes', classRoute);
+app.use('/myaccount', myAccountRoute);
 app.use('/signup',authMiddleware.requireAuth, signUpRoute);
 app.use('/auth', authRoute);
 

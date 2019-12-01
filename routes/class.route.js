@@ -11,6 +11,8 @@ var router = express.Router();
 
 router.get('/create',authMiddleware.requireAuth, controller.create);
 
+router.get('/:id', controller.view);
+
 router.post('/create',validate.postCreate, controller.postCreate);
 
 

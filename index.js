@@ -37,8 +37,12 @@ app.get('/dang-ky-lam-gia-su', function(req, res) {
 	res.render('dang-ky-lam-gia-su');
 });
 app.get('/danh-sach-lop-moi', async function(req, res){
-
-	var classes = await Classes.find();
+	var page = parseInt(req.query.page);
+	var perPage = 3;
+	
+	var classes = await Classes.find().sort({classId: -1})
+								.skip((perPage * page) - perPage)
+								.limit(perPage);
 	res.render('danh-sach-lop-moi', {
 		classes: classes
 	});

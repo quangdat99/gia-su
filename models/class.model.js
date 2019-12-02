@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var classSchema = new mongoose.Schema({
-	classId: String,
+	classId: Number,
 	subject: String,
 	address: String,
 	price: String,

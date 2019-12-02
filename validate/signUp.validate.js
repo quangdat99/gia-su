@@ -2,6 +2,8 @@ var Phuhuynh = require('../models/phuhuynh.model');
 var Giasu = require('../models/giasu.model');
 var Classes = require('../models/class.model');
 
+
+
 module.exports.postPhuhuynh = function (req, res, next) {
 	var errors = [];
 
@@ -85,3 +87,23 @@ module.exports.postCreate = async function (req, res, next) {
 
 	next();
 };
+
+// module.exports.search = async function (req, res, next) {
+// 	var errors = [];
+
+// 	if (!req.body.q) {
+// 		errors.push('Yêu cầu nhập ');
+// 	}
+
+// 	if (errors.length) {
+// 		var classes = await Classes.find().sort({classId: -1});
+// 		res.render('danh-sach-lop-moi', {
+// 			errors: errors,
+// 			values: req.body,
+// 			classes: classes
+// 		});
+// 		return;
+// 	}
+
+// 	next();
+// };

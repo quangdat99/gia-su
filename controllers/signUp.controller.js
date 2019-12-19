@@ -1,5 +1,6 @@
 var Giasu = require('../models/giasu.model');
 var Phuhuynh = require('../models/phuhuynh.model');
+var Tutor = require('../models/tutor.model');
 
 module.exports.giasu = async function(req, res) {
 	var giasu = await Giasu.find();
@@ -7,6 +8,14 @@ module.exports.giasu = async function(req, res) {
 		giasu: giasu
 	});
 };
+
+module.exports.tutor = async function(req, res) {
+	var tutor = await Tutor.find();
+	res.render('signUp/tutor', {
+		tutor: tutor
+	});
+};
+
 module.exports.phuhuynh = async function(req, res) {
 	var phuhuynh = await Phuhuynh.find();
 	res.render('signUp/phuhuynh', {
@@ -22,4 +31,9 @@ module.exports.postPhuhuynh = function(req, res) {
 module.exports.postGiasu = function(req, res) {
 	Giasu.create(req.body);	
 	res.redirect('/danh-sach-lop-moi');
+};
+
+module.exports.postTutor = function(req, res) {
+	Tutor.create(req.body);	
+	res.redirect('/login');
 };

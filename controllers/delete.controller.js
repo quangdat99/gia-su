@@ -4,26 +4,23 @@ var Phuhuynh = require('../models/phuhuynh.model');
 
 
 
-module.exports.delClass = async function(req, res) {
-	//console.table(req);
-	//var data-id= req.body;
-	var id=req.body;
-	//console.log(id);
-	Classes.deleteOne({ classId: id});
-	var classes = await Classes.find();
-	res.render('classes/create',{
-		classes: classes
+module.exports.delClass = async function(req, res, next) {
+	var id = parseInt(req.params.id);
+	Classes.findOne({ classId: id}).remove(function() { 
+		res.redirect('/classes/create');
 	});
 };
 
-module.exports.delGiasu = function(req, res) {
-	//var data-id= req.body;
-	Classes.deleteOne({ _id: data-id});
-	res.redirect('/signup/giasu');
+module.exports.delGiasu = function(req, res, next) {
+	var id = req.params.id;
+	Giasu.findOne({ _id: id}).remove(function() { 
+		res.redirect('/signup/giasu');
+	});
 };
 
-module.exports.delPhuhuynh = function(req, res) {
-	//var data-id= req.body;
-	Classes.deleteOne({ _id: data-id});
-	res.redirect('/signup/phuhuynh');
+module.exports.delPhuhuynh = function(req, res, next) {
+	var id = req.params.id;
+	Phuhuynh.findOne({ _id: id}).remove(function() { 
+		res.redirect('/signup/phuhuynh');
+	});
 };

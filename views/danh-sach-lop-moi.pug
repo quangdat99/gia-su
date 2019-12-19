@@ -40,40 +40,42 @@ block content
 							.text-right.mt-3
 								a.btn.btn-success.btn-sm.font-weight-bold(href='/classes/' + _class.classId) &raquo; Xem chi tiết 
 		
-		h5(style='text-align: center') 
-			a(href='/danh-sach-lop-moi')
-				button T&igrave;m ki&#x1EBF;m l&#x1EA1;i	
-	nav(aria-label='Page navigation example')
-		ul.pagination.justify-content-center
-			li.page-item
-				a.page-link(href='#', aria-label='Previous')
-					span(aria-hidden='true') &laquo;
-					span.sr-only Previous
-			li.page-item
-				a.page-link(href='#') 1
-			li.page-item
-				a.page-link(href='#') 2
-			li.page-item
-				a.page-link(href='#') 3
-			li.page-item
-				a.page-link(href='#', aria-label='Next')
-					span(aria-hidden='true') &raquo;
-					span.sr-only Next
 
+	
+	if pages > 0 
+		nav(aria-label='Page navigation example')
+			ul.pagination.justify-content-center
+				if current == 1
+					li.page-item.disabled
+						a.page-link &laquo;
+				else
+					li.page-item
+						a.page-link(href="/danh-sach-lop-moi?page=1") &laquo;
+				
+				- var i = (Number(current) > 5 ? Number(current) - 4 : 1);
+				if i !== 1 
+					li.page-item.disabled
+						a.page-link ...
+				
+				- for (; i <= (Number(current) + 4) && i <= pages; i++ )
+					if i == current 
+						li.page-item.active
+							a.page-link=i
+					else 
+						li.page-item
+							a.page-link(href="/danh-sach-lop-moi?page="+ i)= i 
+					
+					if (i == Number(current) + 4 && i < pages) 
+						li.page-item.disabled
+							a.page-link ...
+					
 
-		//- table.table.table-striped
-		//- 	thead
-		//- 		tr
-		//- 			th Mã lớp 
-		//- 			th Tên lớp 
-		//- 			th Địa chỉ 
-		//- 			th Giá tiền 
-		//- 			th Yêu cầu 
-		//- 	tbody
-		//- 		each _class in classes	
-		//- 			tr 
-		//- 				td= _class.classId
-		//- 				td= _class.subject
-		//- 				td= _class.address 
-		//- 				td= _class.price
-		//- 				td= _class.require 
+				
+				if (current == pages) 
+					li.page-item.disabled
+						a.page-link &raquo;
+				else 
+					li.page-item
+						a.page-link(href="/danh-sach-lop-moi?page="+ pages ) &raquo;
+				
+		

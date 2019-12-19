@@ -29,5 +29,7 @@ block content
 						td= _giasu.university 
 						td= _giasu.message 
 						td 
-							button(data-id='') delete 
+							
+							form(action='/delete/giasu/'+_giasu._id, method ='GET')
+								button delete
 

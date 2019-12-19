@@ -23,4 +23,5 @@ block content
 						td= _phuhuynh.address 
 						td= _phuhuynh.message 
 						td 
-							button(data-id='') delete 
+							form(action='/delete/phuhuynh/'+_phuhuynh._id, method ='GET')
+								button delete

@@ -4,11 +4,11 @@ var controller = require('../controllers/delete.controller');
 
 var router = express.Router();
 
-router.get('/class', controller.delClass);
+router.get('/class/:id', controller.delClass);
 
-router.get('/giasu', controller.delGiasu);
+router.get('/giasu/:id', controller.delGiasu);
 
-router.get('/phuhuynh', controller.delPhuhuynh);
+router.get('/phuhuynh/:id', controller.delPhuhuynh);
 
 
 

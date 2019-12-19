@@ -8,23 +8,31 @@ block content
       h3.text-success Đăng ký làm gia sư
       .mt-4.mb-3
 
-      form(method='POST', action='/register')
+      //- if errors
+      //-   each error in errors
+      //-     .alert.alert-danger= error
+
+      form(method='POST', action='/signup/tutor')
         .form-group
           .input-group
-            input#name.form-control(name='name', type='text', value='', placeholder='Họ tên của bạn', required='')
+            input#name.form-control(name='name', type='text', value=values?values.name: "", placeholder='Họ tên của bạn', required='')
         .form-group
           .input-group
-            input#email.form-control(name='email', type='email', value='', placeholder='Địa chỉ email', required='')
+            input#email.form-control(name='email', type='email', value=values?values.email: "", placeholder='Địa chỉ email', required='')
         .form-group
           .input-group
             input#password.form-control(name='password', type='password', placeholder='Mật khẩu', required='')
-        .form-group
-          .input-group
-            input#password-confirm.form-control(name='password_confirmation', type='password', placeholder='Xác nhận mật khẩu', required='')
+        
         .form-group.mt-4
 
-          button.btn.btn-lg-x.btn-success.font-weight-bold(type='submit') Đăng ký ngay 
+          input.btn.btn-primary.mt-3.font-weight-bold(type='submit', value='Đăng Ký Ngay')
+ 
 
       p.my-lead.mt-5.mb-0.text-center
         span Bạn đã có tài khoản?
-        a.d-inline-block.text-underline.ml-2(href='/login') Đăng nhập 
+        a.d-inline-block.text-underline.ml-2(href='/login') Đăng nhập
+
+      if errors
+        each error in errors
+          li
+            small(style='color:red')= error

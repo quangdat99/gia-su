@@ -1,0 +1,27 @@
+extends ../layouts/common
+
+
+block content
+	h1 Danh sách gia sư đăng ký
+
+	div(style='overflow-x:auto;')
+
+
+		table.table.table-bordered
+			thead 
+				tr
+					th Tên
+					th Email 
+					th Xóa 
+
+
+			tbody
+				each _tutor in tutor 	
+					tr 
+						td= _tutor.name
+						td= _tutor.email 
+						td 
+							
+							form(action='/delete/tutor/'+tutor._id, method ='GET')
+								button delete
+

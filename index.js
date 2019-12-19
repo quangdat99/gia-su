@@ -8,6 +8,7 @@ mongoose.connect(process.env.MONGO_URL);
 
 
 var classRoute = require("./routes/class.route");
+var deleteRoute = require("./routes/delete.route");
 var signUpRoute = require("./routes/signUp.route");
 var authRoute = require('./routes/auth.route');
 var myAccountRoute = require('./routes/myAccount.route');
@@ -36,19 +37,34 @@ app.get('/dang-ky-thue-gia-su', function(req, res) {
 app.get('/dang-ky-lam-gia-su', function(req, res) {
 	res.render('dang-ky-lam-gia-su');
 });
-app.get('/danh-sach-lop-moi', async function(req, res){
-	var page = parseInt(req.query.page);
-	var perPage = 3;
-	
+app.get('/danh-sach-lop-moi',async function(req, res, next){
+	var perPage = 5;
+	var page = parseInt(req.query.page) || 1;
+
 	var classes = await Classes.find().sort({classId: -1})
-								.skip((perPage * page) - perPage)
-								.limit(perPage);
+								.skip((perPage * page) - perPage).limit(perPage);
+							   
+	var count = await Classes.find().count();
+	var pages = Math.ceil(count / perPage);
+
 	res.render('danh-sach-lop-moi', {
-		classes: classes
+		classes: classes,
+		pages: pages,
+		current: page
 	});
 });
 app.get('/cach-thuc-nhan-lop', function(req, res) {
 	res.render('cach-thuc-nhan-lop');
+});
+app.get('/dang-ky-nhan-lop/:id', async function(req, res) {
+	var id = parseInt(req.params.id);
+	var classes = await Classes.findOne({ classId: id});
+	res.render('dang-ky-nhan-lop', {
+		classes: classes
+	});
+});
+app.get('/thong-tin-tai-khoan', function(req, res) {
+	res.render('thong-tin-tai-khoan');
 });
 app.get('/chinh-sach-hoan-phi', function(req, res) {
 	res.render('chinh-sach-hoan-phi');
@@ -69,9 +85,11 @@ app.get('/register', function(req, res) {
 	res.render('register');
 });
 
+
 app.use('/classes', classRoute);
-app.use('/myaccount', myAccountRoute);
-app.use('/signup',authMiddleware.requireAuth, signUpRoute);
+app.use('/delete', deleteRoute);
+app.use('/myaccount',authMiddleware.requireLogin, myAccountRoute);
+app.use('/signup', signUpRoute);
 app.use('/auth', authRoute);
 
 

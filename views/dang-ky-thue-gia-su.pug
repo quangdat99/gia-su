@@ -8,9 +8,9 @@ block content
     hr
     br
 
-    if errors
-      each error in errors
-        .alert.alert-danger= error
+    //- if errors
+    //-   each error in errors
+    //-     .alert.alert-danger= error
 
     form#form_order(action='/signup/phuhuynh', method='POST')  
       .form-row
@@ -30,7 +30,10 @@ block content
       .text-right
         input.btn.btn-primary.mt-3.font-weight-bold(type='submit', value='Đăng Ký Ngay')
 
-
+    if errors
+      each error in errors
+        li
+          small(style='color:red')= error
 
 
     .mt-4.pt-2.text-muted.text-justify

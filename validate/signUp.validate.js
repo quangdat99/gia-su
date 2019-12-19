@@ -52,6 +52,32 @@ module.exports.postGiasu = function (req, res, next) {
 	next();
 };
 
+module.exports.postTutor = function (req, res, next) {
+	var errors = [];
+
+	if (!req.body.name) {
+		errors.push('Yêu cầu nhập Tên ');
+	}
+
+	if (!req.body.email) {
+		errors.push('Yêu cầu nhập Email ');
+	}
+
+	if (!req.body.password) {
+		errors.push('Yêu cầu nhập mật khẩu  ');
+	}
+
+	if (errors.length) {
+		res.render('register', {
+			errors: errors,
+			values: req.body
+		});
+		return;
+	}
+
+	next();
+};
+
 module.exports.postCreate = async function (req, res, next) {
 	var errors = [];
 
@@ -74,6 +100,29 @@ module.exports.postCreate = async function (req, res, next) {
 	if (!req.body.require) {
 		errors.push('Yêu cầu nhập Yêu cầu  ');
 	}
+	if (!req.body.sex) {
+		errors.push('Yêu cầu nhập Giới tính   ');
+	}
+
+	if (!req.body.info) {
+		errors.push('Yêu cầu nhập Thông tinh  ');
+	}
+
+	if (!req.body.time) {
+		errors.push('Yêu cầu nhập Thời gian học ');
+	}
+
+	if (!req.body.income) {
+		errors.push('Yêu cầu nhập Thu nhập  ');
+	}
+
+	if (!req.body.cost) {
+		errors.push('Yêu cầu nhập Chi phí  ');
+	}
+
+	if (!req.body.additional) {
+		errors.push('Yêu cầu nhập Bổ sung  ');
+	}
 
 	if (errors.length) {
 		var classes = await Classes.find();
@@ -87,6 +136,8 @@ module.exports.postCreate = async function (req, res, next) {
 
 	next();
 };
+
+
 
 // module.exports.search = async function (req, res, next) {
 // 	var errors = [];

@@ -10,4 +10,8 @@ router.get('/login', controller.login);
 
 router.post('/login', controller.postLogin);
 
+router.get('/loginTutor', controller.loginTutor);
+
+router.post('/loginTutor', controller.postLoginTutor);
+
 module.exports = router;

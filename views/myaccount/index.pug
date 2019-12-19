@@ -6,18 +6,17 @@ block content
   .row
     .col-lg-4.pr-lg-5
       h3 Tài khoản của tôi
-      h5.mt-3.pl-1
-        | Mã gia sư :  
-        span.text-success GA8339
+      //- h5.mt-3.pl-1
+      //-   | Mã gia sư :  
+      //-   span.text-success GA8339
     .col-lg-8.mt-5.mt-lg-4
 
       
       h5.mb-4 Thông tin cơ bản
       form(method='POST', action='/myaccount/profile/basic', novalidate='')
-        input(type='hidden', name='_token', value='pQGrRZi4ws9DlVpL172XvgVu2rMagFkrQ13BTwBP')
         .row
           .col-md-4.form-group
-            label.font-weight-bold Họ và tên: 
+            label.font-weight-bold Tên: 
             input.form-control(type='text', name='name', value='', autocomplete='off', maxlength='50')
           .col-md-3.form-group.mt-1.mt-md-0
             label.font-weight-bold Điện thoại:

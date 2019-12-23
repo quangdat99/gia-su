@@ -25,9 +25,9 @@ module.exports.requireLogin = async function (req, res, next) {
 		return;
 	}
 
-	var tutor = await Tutor.find({_id: req.cookies.tutorId });
+	var tutor = await Tutor.find({id: req.cookies.tutorId });
 
-	if (!tutor[0]._id) {
+	if (!tutor[0].id) {
 		res.redirect('/login');
 		return;
 	}

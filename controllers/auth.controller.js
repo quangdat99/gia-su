@@ -76,8 +76,10 @@ module.exports.postLoginTutor = async function(req, res) {
 	 // res.render('myaccount/index',{
 	 // 	tutor: tutor
 	 // });
-	 res.cookie('tutorId', tutor[0]._id);
-	 
+	 res.cookie('tutorId', tutor[0].id);
+	 // res.render('myaccount/index',{
+	 // 	tutor: tutor
+	 // })
 	 res.redirect("/myaccount");
 
 }

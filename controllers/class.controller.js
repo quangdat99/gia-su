@@ -42,6 +42,8 @@ module.exports.search = async function(req, res) {
 	});
 }
 
+
+
 module.exports.view = async function(req, res) {
 	var id = req.params.id;
 	var classes = await Classes.findOne({classId: id});

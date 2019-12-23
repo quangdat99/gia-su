@@ -2,10 +2,10 @@ extends ../layouts/common
 
 block content
 	h1 Vào trang Admin  
-
 	if errors
 		each error in errors
-			.alert.alert-danger= error
+			li
+				small(style='color:red')= error
 
 	form(method="POST")
 		.form-group 
@@ -15,5 +15,6 @@ block content
 		.form-group 
 			label(for="password") Password:
 			input#password.form-control(type="password", name="password", value=values?values.password: "")
+	
 
 		button.btn.btn-primary Login

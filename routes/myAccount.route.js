@@ -6,5 +6,7 @@ var router = express.Router();
 
 router.get('/', controller.index);
 
+router.post('/profile', controller.update);
+
 
 module.exports = router;

@@ -38,7 +38,7 @@ app.get('/dang-ky-lam-gia-su', function(req, res) {
 	res.render('dang-ky-lam-gia-su');
 });
 app.get('/danh-sach-lop-moi',async function(req, res, next){
-	var perPage = 5;
+	var perPage = 8;
 	var page = parseInt(req.query.page) || 1;
 
 	var classes = await Classes.find().sort({classId: -1})
@@ -56,11 +56,14 @@ app.get('/danh-sach-lop-moi',async function(req, res, next){
 app.get('/cach-thuc-nhan-lop', function(req, res) {
 	res.render('cach-thuc-nhan-lop');
 });
-app.get('/dang-ky-nhan-lop/:id', async function(req, res) {
+app.get('/dang-ky-nhan-lop/:id',authMiddleware.requireLogin, async function(req, res) {
 	var id = parseInt(req.params.id);
+
 	var classes = await Classes.findOne({ classId: id});
 	res.render('dang-ky-nhan-lop', {
-		classes: classes
+		classes: classes,
+		tutorId: req.cookies.tutorId
+
 	});
 });
 app.get('/thong-tin-tai-khoan', function(req, res) {

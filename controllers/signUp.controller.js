@@ -1,6 +1,7 @@
 var Giasu = require('../models/giasu.model');
 var Phuhuynh = require('../models/phuhuynh.model');
 var Tutor = require('../models/tutor.model');
+var shortid = require('shortid');
 
 module.exports.giasu = async function(req, res) {
 	var giasu = await Giasu.find();
@@ -34,6 +35,7 @@ module.exports.postGiasu = function(req, res) {
 };
 
 module.exports.postTutor = function(req, res) {
+	req.body.id ="GA"+ Math.floor(Math.random() * 10000);;
 	Tutor.create(req.body);	
 	res.redirect('/login');
 };

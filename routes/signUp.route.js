@@ -7,13 +7,11 @@ var router = express.Router();
 
 router.get('/phuhuynh', controller.phuhuynh);
 
-router.get('/giasu', controller.giasu);
-
 router.get('/tutor', controller.tutor);
 
-router.post('/phuhuynh',validate.postPhuhuynh, controller.postPhuhuynh);
+router.get('/chitiet/:id', controller.chitiet);
 
-router.post('/giasu',validate.postGiasu, controller.postGiasu);
+router.post('/phuhuynh',validate.postPhuhuynh, controller.postPhuhuynh);
 
 router.post('/tutor',validate.postTutor, controller.postTutor);
 

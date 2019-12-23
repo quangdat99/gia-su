@@ -24,4 +24,9 @@ block content
 						td= _phuhuynh.message 
 						td 
 							form(action='/delete/phuhuynh/'+_phuhuynh._id, method ='GET')
-								button delete
+								button.btn.btn-danger Xóa 
+	hr
+	.text-left
+		a(href='/admin')
+			button.btn.btn-primary Quay lại
+

@@ -6,8 +6,6 @@ var router = express.Router();
 
 router.get('/class/:id', controller.delClass);
 
-router.get('/giasu/:id', controller.delGiasu);
-
 router.get('/phuhuynh/:id', controller.delPhuhuynh);
 
 

@@ -7,7 +7,6 @@ var validate = require('../validate/signUp.validate');
 
 var router = express.Router();
 
-// router.get('/', controller.index);
 
 router.get('/create',authMiddleware.requireAuth, controller.create);
 
@@ -17,5 +16,8 @@ router.get('/:id', controller.view);
 
 router.post('/create',validate.postCreate, controller.postCreate);
 
+router.get('/edit/:id',authMiddleware.requireAuth, controller.edit);
+
+router.post('/update',authMiddleware.requireAuth, controller.update);
 
 module.exports = router;

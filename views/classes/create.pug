@@ -5,16 +5,17 @@ block content
 
 	h1 Danh sách lớp:
 		
-	div(style="overflow-y:scroll;height: 300px;width: 100%;")
-		table.table.table-bordered.table-responsive
+	div(style="overflow-y:scroll;height: 500px;width: 100%;")
+		table.table.table-bordered.table-responsive.table-striped.table-sm
 			thead
 				tr
-					th Mã lớp 
-					th Tên lớp 
-					th Địa chỉ 
-					th Giá tiền 
-					th Yêu cầu 
-					th Xóa 
+					th.th-sm Mã lớp 
+					th.th-sm Tên lớp 
+					th.th-sm Địa chỉ 
+					th.th-sm Giá tiền 
+					th.th-sm Yêu cầu 
+					th.th-sm Sửa
+					th.th-sm Xóa 
 			tbody
 				each _class in classes	
 					tr 
@@ -24,8 +25,12 @@ block content
 						td= _class.price
 						td= _class.require 
 						td 
+							a(href='/classes/edit/'+ _class.classId)
+								button.btn.btn-success Sửa 
+
+						td 
 							form(action='/delete/class/'+ _class.classId, method ='GET')
-								button delete
+								button.btn.btn-danger Xóa 
 
 	
 	h1 Tạo lớp
@@ -77,9 +82,16 @@ block content
 				label(for="email") Bổ sung:
 				input.form-control(type="text", name="additional", value=values?values.additional: "")
 
-		button.btn.btn-primary Tạo lớp 
+		.text-right 
+			button.btn.btn-primary Tạo lớp 
 
 	if errors
 		each error in errors
 			li
 				small(style='color:red')= error
+	hr
+
+	.text-left
+		a(href='/admin')
+			button.btn.btn-primary Quay lại
+

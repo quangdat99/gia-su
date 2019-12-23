@@ -12,6 +12,8 @@ block content
 				tr
 					th Tên
 					th Email 
+					th Điện thoại 
+					th Chi tiết 
 					th Xóa 
 
 
@@ -20,8 +22,16 @@ block content
 					tr 
 						td= _tutor.name
 						td= _tutor.email 
+						td= _tutor.phone
+						td 
+							a(href='/signup/chitiet/' +_tutor.id)
+								button.btn.btn-success Chi tiết 
 						td 
 							
-							form(action='/delete/tutor/'+tutor._id, method ='GET')
-								button delete
+							form(action='/delete/tutor/'+_tutor._id, method ='GET')
+								button.btn.btn-danger Xóa 
+	hr
+	.text-left
+		a(href='/admin')
+			button.btn.btn-primary Quay lại
 

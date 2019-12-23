@@ -15,17 +15,17 @@ block content
     form#form_order(action='/signup/phuhuynh', method='POST')  
       .form-row
         .col-lg-6.form-group
-          input#name.form-control(type='text', name='name', placeholder='Họ và tên', value=values?values.ten: "")
+          input#name.form-control(type='text', name='name', placeholder='Họ và tên', value=values?values.name: "")
         .col-lg-6.form-group
-          input#phone.form-control(type='number', name='phone', placeholder='Số điện thoại', value=values?values.ten: "")
+          input#phone.form-control(type='number', name='phone', placeholder='Số điện thoại', value=values?values.phone: "")
 
 
       .form-row
         .col-lg-12.form-group.mt-lg-2
-          input.form-control(type='text', name='address', placeholder='Số nhà, tên đường', value=values?values.ten: "")
+          input.form-control(type='text', name='address', placeholder='Số nhà, tên đường', value=values?values.address: "")
 
         .col-lg-12.form-group.mt-lg-2
-          input.form-control(type='text', name='message', placeholder='Ghi chú (không bắt buộc)', value=values?values.ten: "")
+          input.form-control(type='text', name='message', placeholder='Ghi chú (không bắt buộc)', value=values?values.message: "")
 
       .text-right
         input.btn.btn-primary.mt-3.font-weight-bold(type='submit', value='Đăng Ký Ngay')

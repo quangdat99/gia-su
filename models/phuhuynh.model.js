@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 var phuhuynhSchema = new mongoose.Schema({
 	name: String,
-	dienthoai: Number,
+	phone: Number,
 	address: String,
 	message: String,
 });

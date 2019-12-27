@@ -57,7 +57,24 @@ html(lang="vi")
 					hr
 					
 					if user
-						p=user.name	
+						ul.list-unstyled.menu-nav-secondary
+							li.nav-item.my-profile
+								.dropdown
+									button.btn.btn-secondary.dropdown-toggle(type='button', data-toggle='dropdown')
+										i.fa.fa-user-circle-o(style="font-size:36px")
+										span.font-weight-bold.m-2.pb-2=user.name
+									ul.dropdown-menu.p-2
+										li
+											a.nav-item(href='/myaccount') Mã gia sư : 
+											span=user.id
+										li
+											a.nav-item(href='/myaccount/change_password') &Dstrok;&#x1ED5;i m&#x1EAD;t kh&#x1EA9;u
+							li.nav-item.mt-5
+								a.btn.btn-lg-x.btn-primary.font-weight-bold(href='/myaccount') Cập nhật thông tin 
+							li.nav-item.m-4
+								a.btn.btn-outline-dark.font-weight-bold(href='/logout', rel='nofollow') Đăng xuất 
+
+
 					else
 						div
 							strong

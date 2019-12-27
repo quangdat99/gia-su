@@ -30,20 +30,17 @@ module.exports.requireLogin = async function (req, res, next) {
 		res.redirect('/login');
 		return;
 	}
-	console.log(req.signedCookies.tutorId)
-	res.locals.user = tutor;
 	next();
 
 };
 
-// module.exports.req = async function (req, res, next) {
-// 	if (req.signedCookies.tutorId) {
-// 		res.render('layouts/common',
-// 			user: req.signedCookies.tutorId
-// 		);
-// 	}
+module.exports.req = async function (req, res, next) {
+	if (req.signedCookies.tutorId) {
+		var tutor = await Tutor.findOne({id: req.signedCookies.tutorId });
+		res.locals.user = tutor;
+	}
 
 	
-// 	next();
+	next();
 
-// };
+};

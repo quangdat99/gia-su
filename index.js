@@ -8,12 +8,12 @@ mongoose.connect(process.env.MONGO_URL);
 
 
 var classRoute = require("./routes/class.route");
+var route = require("./routes/route");
 var deleteRoute = require("./routes/delete.route");
 var signUpRoute = require("./routes/signUp.route");
 var authRoute = require('./routes/auth.route');
 var myAccountRoute = require('./routes/myAccount.route');
 var authMiddleware = require('./middlewares/auth.middleware');
-var Classes = require('./models/class.model')
 
 
 var port = 3000;
@@ -25,75 +25,16 @@ app.set('views', './views');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser("abc123xyz"));
-
 app.use(express.static('public'));
 
-app.get('/', function(req, res){
-	res.render('index');
-});
-app.get('/dang-ky-thue-gia-su', function(req, res) {
-	res.render('dang-ky-thue-gia-su');
-});
-app.get('/dang-ky-lam-gia-su', function(req, res) {
-	res.render('dang-ky-lam-gia-su');
-});
-app.get('/danh-sach-lop-moi',async function(req, res, next){
-	var perPage = 8;
-	var page = parseInt(req.query.page) || 1;
-
-	var classes = await Classes.find().sort({classId: -1})
-								.skip((perPage * page) - perPage).limit(perPage);
-							   
-	var count = await Classes.find().count();
-	var pages = Math.ceil(count / perPage);
-
-	res.render('danh-sach-lop-moi', {
-		classes: classes,
-		pages: pages,
-		current: page
-	});
-});
-app.get('/cach-thuc-nhan-lop', function(req, res) {
-	res.render('cach-thuc-nhan-lop');
-});
-app.get('/dang-ky-nhan-lop/:id',authMiddleware.requireLogin, async function(req, res) {
-	var id = parseInt(req.params.id);
-
-	var classes = await Classes.findOne({ classId: id});
-	res.render('dang-ky-nhan-lop', {
-		classes: classes,
-		tutorId: req.cookies.tutorId
-
-	});
-});
-app.get('/thong-tin-tai-khoan', function(req, res) {
-	res.render('thong-tin-tai-khoan');
-});
-app.get('/chinh-sach-hoan-phi', function(req, res) {
-	res.render('chinh-sach-hoan-phi');
-});
-app.get('/chinh-sach-hoc-thu', function(req, res) {
-	res.render('chinh-sach-hoc-thu');
-});
-app.get('/lien-he', function(req, res) {
-	res.render('lien-he');
-});
-app.get('/admin',authMiddleware.requireAuth, function(req, res) {
-	res.render('admin');
-});
-app.get('/login', function(req, res) {
-	res.render('login');
-});
-app.get('/register', function(req, res) {
-	res.render('register');
-});
 
 
-app.use('/classes', classRoute);
+app.use('/classes',authMiddleware.req, classRoute);
 app.use('/delete', deleteRoute);
-app.use('/myaccount',authMiddleware.requireLogin, myAccountRoute);
+app.use('/myaccount',authMiddleware.req, authMiddleware.requireLogin, myAccountRoute);
 app.use('/signup', signUpRoute);
 app.use('/auth', authRoute);
+app.use('/',authMiddleware.req, route);
 
 
 app.listen(port, function () {

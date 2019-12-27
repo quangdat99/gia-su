@@ -2,10 +2,9 @@ var Tutor = require('../models/tutor.model');
 
 
 module.exports.index = async function(req, res) {
-	var tutor = await Tutor.find({id: req.cookies.tutorId });
-	//console.log(tutor[0].id)
+	var tutor = await Tutor.findOne({id: req.signedCookies.tutorId });
 	res.render('myaccount/index',{
-		tutor: tutor[0]
+		tutor: tutor
 	});
 
 };
@@ -18,7 +17,7 @@ module.exports.update = async function(req, res) {
 	var namsinh = req.body.namsinh;
 	var truong = req.body.truong;
 	var nganh = req.body.nganh;
-	Tutor.findOne({ id: req.cookies.tutorId}).update({ name: name, phone: phone, gioitinh: gioitinh, namsinh: namsinh, truong: truong, nganh: nganh},function() { 
+	Tutor.findOne({ id: req.signedCookies.tutorId}).update({ name: name, phone: phone, gioitinh: gioitinh, namsinh: namsinh, truong: truong, nganh: nganh},function() { 
 		res.redirect('/myaccount');
 	});
 

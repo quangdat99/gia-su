@@ -55,21 +55,24 @@ html(lang="vi")
 							strong Hotline
 					div(style='color:red') 0868389999
 					hr
-					div
-						strong
-							small Phụ huynh
 					
-					a(href="/dang-ky-thue-gia-su")
-						button.btn.btn-warning.btn-sm(type='button', style='padding:3px') Đăng ký thuê gia sư
-					hr
-					div
-						strong
-							small Gia sư
-					a.btn.btn-lg-x.btn-primary.font-weight-bold(href='/register') &Dstrok;&abreve;ng k&yacute; l&agrave;m gia s&#x1B0;
+					if user
+						p=user.name	
+					else
+						div
+							strong
+								small Phụ huynh
+						
+						a.btn.btn-lg-x.btn-warning.font-weight-bold(href="/dang-ky-thue-gia-su") Đăng ký thuê gia sư
+						hr
+						div
+							strong
+								small Gia sư
+						a.btn.btn-lg-x.btn-primary.font-weight-bold(href='/register') &Dstrok;&abreve;ng k&yacute; l&agrave;m gia s&#x1B0;
 
-			
-					p
-					a.btn.btn-login.btn-secondary.font-weight-bold(href='/login', rel='nofollow') &Dstrok;&abreve;ng nh&#x1EAD;p v&agrave;o t&agrave;i kho&#x1EA3;n
+				
+						p
+						a.btn.btn-login.btn-secondary.font-weight-bold(href='/login', rel='nofollow') &Dstrok;&abreve;ng nh&#x1EAD;p v&agrave;o t&agrave;i kho&#x1EA3;n
 
 					
 				#anhchuyendong.col-sm-9(style='background-color:#FFC')

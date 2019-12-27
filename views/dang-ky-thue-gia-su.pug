@@ -3,8 +3,9 @@ extends ./layouts/common
 
 block content
 
+
   .col-lg-12
-    h1.mb-4.text-success Đăng ký thuê gia sư
+    h2.mb-4.text-success Đăng ký thuê gia sư
     hr
     br
 
@@ -15,6 +16,7 @@ block content
     form#form_order(action='/signup/phuhuynh', method='POST')  
       .form-row
         .col-lg-6.form-group
+
           input#name.form-control(type='text', name='name', placeholder='Họ và tên', value=values?values.name: "")
         .col-lg-6.form-group
           input#phone.form-control(type='number', name='phone', placeholder='Số điện thoại', value=values?values.phone: "")
@@ -40,4 +42,5 @@ block content
       hr
       p.mb-0
         | Sau khi bạn đăng ký, chúng tôi sẽ gọi lại cho bạn để trao đổi thêm những thông tin cần thiết khác. Tất cả thông tin của bạn sẽ được bảo mật.
+
 

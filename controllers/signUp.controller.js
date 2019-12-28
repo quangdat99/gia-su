@@ -28,12 +28,12 @@ module.exports.phuhuynh = async function(req, res) {
 
 module.exports.postPhuhuynh = function(req, res) {
 	Phuhuynh.create(req.body);
-	res.redirect('/danh-sach-lop-moi');
+	res.render('dang-ky-thue-gia-su');
 };
 
 
 module.exports.postTutor = function(req, res) {
 	req.body.id ="GA"+ Math.floor(Math.random() * 10000);;
 	Tutor.create(req.body);	
-	res.redirect('/login');
+	res.render('register');
 };

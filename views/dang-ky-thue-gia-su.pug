@@ -9,9 +9,11 @@ block content
     hr
     br
 
-    //- if errors
-    //-   each error in errors
-    //-     .alert.alert-danger= error
+    if mes
+      .alert.alert-success.fade.in.alert-dismissible.show(style='margin-top:18px;')
+        button.close(type='button', data-dismiss='alert', aria-label='Close')
+          span(aria-hidden='true', style='font-size:20px') &times;
+        span=mes
 
     form#form_order(action='/signup/phuhuynh', method='POST')  
       .form-row

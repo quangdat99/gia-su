@@ -39,7 +39,16 @@ module.exports.req = async function (req, res, next) {
 		var tutor = await Tutor.findOne({id: req.signedCookies.tutorId });
 		res.locals.user = tutor;
 	}
+	
+	next();
 
+};
+
+module.exports.reqAdmin = async function (req, res, next) {
+	if (req.signedCookies.adminId) {
+		var admin = await Admin.findOne({_id: req.signedCookies.adminId });
+		res.locals.admin = admin;
+	}
 	
 	next();
 

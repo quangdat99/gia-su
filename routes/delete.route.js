@@ -8,6 +8,7 @@ router.get('/class/:id', controller.delClass);
 
 router.get('/phuhuynh/:id', controller.delPhuhuynh);
 
+router.get('/tutor/:id', controller.delTutor);
 
 
 module.exports = router;

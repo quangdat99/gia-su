@@ -73,7 +73,17 @@ html(lang="vi")
 								a.btn.btn-lg-x.btn-primary.font-weight-bold(href='/myaccount') Cập nhật thông tin 
 							li.nav-item.m-4
 								a.btn.btn-outline-dark.font-weight-bold(href='/logout', rel='nofollow') Đăng xuất 
-
+					else if admin
+						ul.list-unstyled.menu-nav-secondary
+							li.nav-item.my-profile
+								.dropdown
+									button.btn.btn-secondary.dropdown-toggle(type='button', data-toggle='dropdown')
+										i.fa.fa-user-circle-o(style="font-size:36px")
+										span.font-weight-bold.m-2.pb-2 Admin
+					
+							
+							li.nav-item.m-4
+								a.btn.btn-outline-dark.font-weight-bold(href='/logoutAdmin', rel='nofollow') Đăng xuất  
 
 					else
 						div

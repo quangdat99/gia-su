@@ -1,5 +1,5 @@
 var Phuhuynh = require('../models/phuhuynh.model');
-var Giasu = require('../models/giasu.model');
+var Tutor = require('../models/tutor.model');
 var Classes = require('../models/class.model');
 
 
@@ -23,34 +23,10 @@ module.exports.postPhuhuynh = function (req, res, next) {
 		return;
 	}
 
+	res.locals.mes = "Đăng ký thành công"
 	next();
 };
 
-module.exports.postGiasu = function (req, res, next) {
-	var errors = [];
-
-	if (!req.body.name) {
-		errors.push('Yêu cầu nhập Tên ');
-	}
-
-	if (!req.body.email) {
-		errors.push('Yêu cầu nhập Email ');
-	}
-
-	if (!req.body.phone) {
-		errors.push('Yêu cầu nhập số Điên thoại ');
-	}
-
-	if (errors.length) {
-		res.render('dang-ky-lam-gia-su', {
-			errors: errors,
-			values: req.body
-		});
-		return;
-	}
-
-	next();
-};
 
 module.exports.postTutor = function (req, res, next) {
 	var errors = [];
@@ -74,7 +50,7 @@ module.exports.postTutor = function (req, res, next) {
 		});
 		return;
 	}
-
+	res.locals.mes = "Đăng ký thành công"
 	next();
 };
 
@@ -138,23 +114,30 @@ module.exports.postCreate = async function (req, res, next) {
 };
 
 
+module.exports.change_password = async function (req, res, next) {
+	var errors = [];
+	var tutor = await Tutor.findOne({id: req.signedCookies.tutorId});
+	//console.log(tutor)
+	if (req.body.current_password !== tutor.password ) {
+		errors.push('Mật khẩu không chính xác ');
+	}
 
-// module.exports.search = async function (req, res, next) {
-// 	var errors = [];
+	else if (req.body.new_password !== req.body.new_password_confirmation) {
+		errors.push('Mật khẩu mới không khớp');
+	}
 
-// 	if (!req.body.q) {
-// 		errors.push('Yêu cầu nhập ');
-// 	}
 
-// 	if (errors.length) {
-// 		var classes = await Classes.find().sort({classId: -1});
-// 		res.render('danh-sach-lop-moi', {
-// 			errors: errors,
-// 			values: req.body,
-// 			classes: classes
-// 		});
-// 		return;
-// 	}
+	if (errors.length) {
+		res.render('myaccount/change_password', {
+			errors: errors
+		});
+		return;
+	}
+	res.locals.mes = "Thay đổi mật khẩu thành công!"
+	next();
+};
 
-// 	next();
-// };
+module.exports.update = async function (req, res, next) {
+	res.locals.mes = "Cập nhật thành công!"
+	next();
+};

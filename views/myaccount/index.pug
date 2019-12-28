@@ -11,7 +11,12 @@ block content
         span.text-success= tutor.id 
     .col-lg-8.mt-5.mt-lg-4
 
-      
+      if mes
+        .alert.alert-success.fade.in.alert-dismissible.show(style='margin-top:18px;')
+          button.close(type='button', data-dismiss='alert', aria-label='Close')
+            span(aria-hidden='true', style='font-size:20px') &times;
+          span=mes
+
       h5.mb-4 Thông tin cơ bản
       form(method='POST', action='/myaccount/profile', novalidate='')
         .row

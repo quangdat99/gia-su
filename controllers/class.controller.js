@@ -54,7 +54,7 @@ module.exports.view = async function(req, res) {
 
 module.exports.create = async function(req, res) {
 
-	var classes = await Classes.find();
+	var classes = await Classes.find().sort({classId: -1});;
 	res.render('classes/create', {
 		classes: classes
 	});

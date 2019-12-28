@@ -8,7 +8,11 @@ block content
       .pb-3
         h2.text-success &emsp; Đăng ký làm gia sư &emsp;
         hr  
-
+        if mes
+          .alert.alert-success.fade.in.alert-dismissible.show(style='margin-top:18px;')
+            button.close(type='button', data-dismiss='alert', aria-label='Close')
+              span(aria-hidden='true', style='font-size:20px') &times;
+            span=mes
 
         form(method='POST', action='/signup/tutor')
           .form-group

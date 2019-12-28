@@ -27,10 +27,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser("abc123xyz"));
 app.use(express.static('public'));
 
-
+app.get('/admin',authMiddleware.reqAdmin, authMiddleware.requireAuth, function(req, res) {
+	res.render('admin');
+});
 
 app.use('/classes',authMiddleware.req, classRoute);
-app.use('/delete', deleteRoute);
+app.use('/delete',authMiddleware.reqAdmin, deleteRoute);
 app.use('/myaccount',authMiddleware.req, authMiddleware.requireLogin, myAccountRoute);
 app.use('/signup', signUpRoute);
 app.use('/auth', authRoute);

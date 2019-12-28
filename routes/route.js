@@ -68,7 +68,10 @@ router.get('/register', function(req, res) {
 });
 router.get('/logout', function(req, res) {
         res.clearCookie("tutorId");
-        res.redirect('/');
-    });
-
+        res.redirect('/login');
+});
+router.get('/logoutAdmin', function(req, res) {
+        res.clearCookie("adminId");
+        res.redirect('/auth/login');
+});
 module.exports = router;

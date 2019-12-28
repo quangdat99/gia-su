@@ -1,5 +1,5 @@
 var Tutor = require('../models/tutor.model');
-
+var md5 = require('md5');
 
 module.exports.index = async function(req, res) {
 	var tutor = await Tutor.findOne({id: req.signedCookies.tutorId });
@@ -31,7 +31,7 @@ module.exports.change_password = async function(req, res) {
 };
 
 module.exports.password = async function(req, res) {
-	var password = req.body.new_password_confirmation;
+	var password = md5(req.body.new_password_confirmation);
 	Tutor.findOne({ id: req.signedCookies.tutorId}).update({password:password}, async function() { 
 		var tutor = await Tutor.findOne({id: req.signedCookies.tutorId });
 		res.render('myaccount/index',{

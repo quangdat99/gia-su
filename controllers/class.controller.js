@@ -88,8 +88,11 @@ module.exports.update = async function(req, res) {
 	var additional = req.body.additional;
 	var income = req.body.income;
 	Classes.findOne({ classId: classId}).update({ classId: classId, subject: subject, address: address, price: price,
-	 require: requires, sex: sex, info: info, time: time, cost: cost, additional: additional, income: income},function() { 
-		res.redirect('/classes/create');
+	 require: requires, sex: sex, info: info, time: time, cost: cost, additional: additional, income: income},async function() { 
+		var classes = await Classes.find().sort({classId: -1});;
+		res.render('classes/create', {
+			classes: classes
+		});
 	});
 
 };

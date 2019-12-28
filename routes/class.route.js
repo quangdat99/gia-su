@@ -18,6 +18,6 @@ router.post('/create',validate.postCreate, controller.postCreate);
 
 router.get('/edit/:id',authMiddleware.reqAdmin,authMiddleware.requireAuth, controller.edit);
 
-router.post('/update',authMiddleware.requireAuth, controller.update);
+router.post('/update',validate.edit ,authMiddleware.requireAuth, controller.update);
 
 module.exports = router;

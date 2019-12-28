@@ -1,6 +1,7 @@
 var Phuhuynh = require('../models/phuhuynh.model');
 var Tutor = require('../models/tutor.model');
 var Classes = require('../models/class.model');
+var md5 = require('md5');
 
 
 
@@ -118,7 +119,7 @@ module.exports.change_password = async function (req, res, next) {
 	var errors = [];
 	var tutor = await Tutor.findOne({id: req.signedCookies.tutorId});
 	//console.log(tutor)
-	if (req.body.current_password !== tutor.password ) {
+	if (md5(req.body.current_password) !== tutor.password ) {
 		errors.push('Mật khẩu không chính xác ');
 	}
 
@@ -139,5 +140,10 @@ module.exports.change_password = async function (req, res, next) {
 
 module.exports.update = async function (req, res, next) {
 	res.locals.mes = "Cập nhật thành công!"
+	next();
+};
+
+module.exports.edit = async function (req, res, next) {
+	res.locals.mes = "Cập nhật lớp thành công!"
 	next();
 };

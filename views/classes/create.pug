@@ -4,7 +4,13 @@ extends ../layouts/common
 block content
 
 	h1 Danh sách lớp:
-		
+
+	if mes
+		.alert.alert-success.fade.in.alert-dismissible.show(style='margin-top:18px;')
+			button.close(type='button', data-dismiss='alert', aria-label='Close')
+				span(aria-hidden='true', style='font-size:20px') &times;
+			span=mes
+			
 	div(style="overflow-y:scroll;height: 500px;width: 100%;")
 		table.table.table-bordered.table-responsive.table-striped.table-sm
 			thead
@@ -19,7 +25,8 @@ block content
 			tbody
 				each _class in classes	
 					tr 
-						td= _class.classId
+						td B
+							span= _class.classId
 						td= _class.subject
 						td= _class.address 
 						td= _class.price

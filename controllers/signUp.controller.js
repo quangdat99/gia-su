@@ -2,6 +2,7 @@
 var Phuhuynh = require('../models/phuhuynh.model');
 var Tutor = require('../models/tutor.model');
 var shortid = require('shortid');
+var md5 = require('md5');
 
 
 module.exports.tutor = async function(req, res) {
@@ -34,6 +35,7 @@ module.exports.postPhuhuynh = function(req, res) {
 
 module.exports.postTutor = function(req, res) {
 	req.body.id ="GA"+ Math.floor(Math.random() * 10000);;
+	req.body.password= md5(req.body.password);
 	Tutor.create(req.body);	
 	res.render('register');
 };

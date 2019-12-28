@@ -1,4 +1,4 @@
-
+var md5 = require('md5');
 var Admin = require('../models/admin.model');
 
 var Tutor = require('../models/tutor.model');
@@ -63,9 +63,9 @@ module.exports.postLoginTutor = async function(req, res) {
 	 	return;
 	 }
 
-	 //var hashedPassword = md5(password);
+	 var hashedPassword = md5(password);
 
-	 if (tutor.password !== password) {
+	 if (tutor.password !== hashedPassword) {
 	 	res.render('login', {
 	 		errors: [
 	 			'Sai password.'

@@ -32,7 +32,20 @@ module.exports.search = async function(req, res) {
 						      .normalize("NFD")
 						      .replace(/[\u0300-\u036f]/g, "")
 						      .replace(/đ/g, "d")
-						      .replace(/Đ/g, "D")) !== -1)		
+						      .replace(/Đ/g, "D")) !== -1)	
+		||	 (_class.price.toLowerCase()
+							  .normalize("NFD")
+						      .replace(/[\u0300-\u036f]/g, "")
+						      .replace(/đ/g, "d")
+						      .replace(/Đ/g, "D")
+						      
+
+						      .indexOf(q
+						      .toLowerCase()
+						      .normalize("NFD")
+						      .replace(/[\u0300-\u036f]/g, "")
+						      .replace(/đ/g, "d")
+						      .replace(/Đ/g, "D")) !== -1)	
 		});
 	
 	

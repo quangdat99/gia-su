@@ -17,7 +17,7 @@ router.get('/dang-ky-lam-gia-su', function(req, res) {
 	res.render('dang-ky-lam-gia-su');
 });
 router.get('/danh-sach-lop-moi',async function(req, res, next){
-	var perPage = 8;
+	var perPage = 12;
 	var page = parseInt(req.query.page) || 1;
 
 	var classes = await Classes.find().sort({classId: -1})
